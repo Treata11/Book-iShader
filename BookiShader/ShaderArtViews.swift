@@ -586,7 +586,7 @@ struct GlowingMarblingBlackView: View {
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.03, paused: <#T##Bool#>)) { context in
+        TimelineView(.animation(minimumInterval: 0.03, paused: paused)) { context in
             let elapsedTime = startTime.distance(to: context.date)
             
             GlowingMarblingBlack(time: elapsedTime*0.5, location: touch)
