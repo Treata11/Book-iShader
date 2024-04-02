@@ -1,9 +1,9 @@
-//
-//  BookiShaderApp.swift
-//  BookiShader
-//
-//  Created by Treata Norouzi on 4/2/24.
-//
+/*
+ BookiShaderApp.swift
+ Book iShader
+
+ Created by Treata Norouzi on 4/2/24.
+*/
 
 import SwiftUI
 
@@ -11,7 +11,7 @@ import SwiftUI
 struct BookiShaderApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmptyView()
         }
     }
 }
