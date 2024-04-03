@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61138D722BBE07A20077AE71 /* ColorEffectViews.swift */; };
 		611AA9E82BBC2ED300A1531B /* BookiShaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611AA9E72BBC2ED300A1531B /* BookiShaderApp.swift */; };
 		611AA9EC2BBC2ED400A1531B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611AA9EB2BBC2ED400A1531B /* Assets.xcassets */; };
 		611AA9F02BBC2ED400A1531B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611AA9EF2BBC2ED400A1531B /* Preview Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61138D722BBE07A20077AE71 /* ColorEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEffectViews.swift; sourceTree = "<group>"; };
 		611AA9E42BBC2ED300A1531B /* BookiShader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookiShader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		611AA9E72BBC2ED300A1531B /* BookiShaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookiShaderApp.swift; sourceTree = "<group>"; };
 		611AA9EB2BBC2ED400A1531B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				611AA9E72BBC2ED300A1531B /* BookiShaderApp.swift */,
 				611AAA072BBC54C700A1531B /* AudioVisualizerViews.swift */,
+				61138D722BBE07A20077AE71 /* ColorEffectViews.swift */,
 				611AA9F62BBC2EE900A1531B /* ShaderArtViews.swift */,
 				611AA9EB2BBC2ED400A1531B /* Assets.xcassets */,
 				611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */,
@@ -180,6 +183,7 @@
 				611AA9E82BBC2ED300A1531B /* BookiShaderApp.swift in Sources */,
 				611AA9F72BBC2EE900A1531B /* ShaderArtViews.swift in Sources */,
 				611AAA082BBC54C700A1531B /* AudioVisualizerViews.swift in Sources */,
+				61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
