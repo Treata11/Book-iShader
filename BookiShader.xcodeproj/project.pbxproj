@@ -20,6 +20,7 @@
 		611AAA052BBC32A700A1531B /* iShader in Frameworks */ = {isa = PBXBuildFile; productRef = 611AAA042BBC32A700A1531B /* iShader */; };
 		611AAA082BBC54C700A1531B /* AudioVisualizerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611AAA072BBC54C700A1531B /* AudioVisualizerViews.swift */; };
 		611AAA0C2BBC5F9000A1531B /* Be Khod Ay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */; };
+		614B61702BBF167D003A4935 /* DistortionEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		611AA9F62BBC2EE900A1531B /* ShaderArtViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShaderArtViews.swift; sourceTree = "<group>"; };
 		611AAA072BBC54C700A1531B /* AudioVisualizerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizerViews.swift; sourceTree = "<group>"; };
 		611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Be Khod Ay.mp3"; sourceTree = "<group>"; };
+		614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionEffectViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				611AA9E72BBC2ED300A1531B /* BookiShaderApp.swift */,
 				611AAA072BBC54C700A1531B /* AudioVisualizerViews.swift */,
 				61138D722BBE07A20077AE71 /* ColorEffectViews.swift */,
+				614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */,
 				611AA9F62BBC2EE900A1531B /* ShaderArtViews.swift */,
 				611AA9EB2BBC2ED400A1531B /* Assets.xcassets */,
 				611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */,
@@ -182,6 +185,7 @@
 			files = (
 				611AA9E82BBC2ED300A1531B /* BookiShaderApp.swift in Sources */,
 				611AA9F72BBC2EE900A1531B /* ShaderArtViews.swift in Sources */,
+				614B61702BBF167D003A4935 /* DistortionEffectViews.swift in Sources */,
 				611AAA082BBC54C700A1531B /* AudioVisualizerViews.swift in Sources */,
 				61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */,
 			);
