@@ -169,3 +169,101 @@ struct Infrared: View {
 }
 
 #Preview("Infrared") { Infrared() }
+
+// MARK: - CRT
+
+struct CRT: View {
+    var body: some View {
+        subjectView
+            .crt()
+    }
+    
+    // Change based on needs
+    var subjectView: some View {
+        Image(.pufferFishShader)
+            .resizable()
+            .frame(width: 300, height: 300)
+    }
+}
+
+#Preview("CRT") { CRT() }
+
+// MARK: - Lightbulb Screen
+
+struct LightbulbScreen: View {
+    @State var bulbCount = 64
+    
+    var body: some View {
+        subjectView
+            .lightbulbScreen(bulbCount: bulbCount)
+    }
+    
+    // Change based on needs
+    var subjectView: some View {
+        Image(.pufferFishShader)
+            .resizable()
+            .frame(width: 300, height: 300)
+    }
+}
+
+#Preview("Lightbulb Screen") { LightbulbScreen() }
+
+// MARK: - Film Grain
+
+struct FilmGrain: View {
+    @State private var startTime: Date = .now
+    
+    @State var strength: Float = 32
+    @State var fineGrain = true
+    
+    var body: some View {
+        TimelineView(.animation(minimumInterval: 0.05)) { context in
+            let elapsedTime = startTime.distance(to: context.date)
+            
+            VStack {
+                subjectView
+                    .filmGrain(time: elapsedTime, strength: strength, fineGrain: fineGrain)
+                
+                Slider(value: $strength, in: 16...96)
+                    .padding()
+            }
+        }
+        .onTapGesture { fineGrain.toggle() }
+    }
+    
+    // Change based on needs
+    var subjectView: some View {
+        Image(.pufferFishShader)
+            .resizable()
+            .frame(width: 300, height: 300)
+    }
+}
+
+#Preview("Film Grain") { FilmGrain() }
+
+// MARK: - Tileable Water Caustic
+
+struct TileableWaterCaustic: View {
+    @State private var startTime: Date = .now
+    
+    @State var showTiling = false
+
+    var body: some View {
+        TimelineView(.animation(minimumInterval: 0.025)) { context in
+            let elapsedTime = startTime.distance(to: context.date)
+            
+            subjectView
+                .tileableWaterCaustic(time: elapsedTime * 0.5, showTiling: showTiling)
+        }
+        .onTapGesture { showTiling.toggle() }
+    }
+    
+    // Change based on needs
+    var subjectView: some View {
+        Image(.pufferFishShader)
+            .resizable()
+            .frame(width: 300, height: 300)
+    }
+}
+
+#Preview("Tileable Water Caustic") { TileableWaterCaustic() }
