@@ -22,6 +22,8 @@
 		611AAA0C2BBC5F9000A1531B /* Be Khod Ay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */; };
 		614B61702BBF167D003A4935 /* DistortionEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */; };
 		614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B61712BBF22EC003A4935 /* LayerEffectViews.swift */; };
+		61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC3172BC0210A001FA0EA /* ArtShaders.swift */; };
+		61FFC31B2BC0213F001FA0EA /* ShaderHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Be Khod Ay.mp3"; sourceTree = "<group>"; };
 		614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionEffectViews.swift; sourceTree = "<group>"; };
 		614B61712BBF22EC003A4935 /* LayerEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerEffectViews.swift; sourceTree = "<group>"; };
+		61FFC3172BC0210A001FA0EA /* ArtShaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtShaders.swift; sourceTree = "<group>"; };
+		61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderHud.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		611AA9E62BBC2ED300A1531B /* BookiShader */ = {
 			isa = PBXGroup;
 			children = (
+				61FFC3192BC02133001FA0EA /* ViewModels */,
 				611AA9E72BBC2ED300A1531B /* BookiShaderApp.swift */,
 				611AAA072BBC54C700A1531B /* AudioVisualizerViews.swift */,
 				61138D722BBE07A20077AE71 /* ColorEffectViews.swift */,
@@ -85,6 +90,7 @@
 				611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */,
 				611AA9ED2BBC2ED400A1531B /* BookiShader.entitlements */,
 				611AA9EE2BBC2ED400A1531B /* Preview Content */,
+				61FFC3172BC0210A001FA0EA /* ArtShaders.swift */,
 			);
 			path = BookiShader;
 			sourceTree = "<group>";
@@ -102,6 +108,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61FFC3192BC02133001FA0EA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,10 +202,12 @@
 			files = (
 				611AA9E82BBC2ED300A1531B /* BookiShaderApp.swift in Sources */,
 				611AA9F72BBC2EE900A1531B /* ShaderArtViews.swift in Sources */,
+				61FFC31B2BC0213F001FA0EA /* ShaderHud.swift in Sources */,
 				614B61702BBF167D003A4935 /* DistortionEffectViews.swift in Sources */,
 				614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */,
 				611AAA082BBC54C700A1531B /* AudioVisualizerViews.swift in Sources */,
 				61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */,
+				61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +357,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Treata.Tests.BookiShader;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Treata.iShader.BookiShader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -380,7 +396,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Treata.Tests.BookiShader;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Treata.iShader.BookiShader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
