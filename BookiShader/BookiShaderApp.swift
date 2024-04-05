@@ -11,7 +11,7 @@ import SwiftUI
 struct BookiShaderApp: App {
     var body: some Scene {
         WindowGroup {
-            EmptyView()
+            ArtShaders()
         }
     }
 }
