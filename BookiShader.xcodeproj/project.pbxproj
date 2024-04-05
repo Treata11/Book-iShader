@@ -24,6 +24,7 @@
 		614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B61712BBF22EC003A4935 /* LayerEffectViews.swift */; };
 		61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC3172BC0210A001FA0EA /* ArtShaders.swift */; };
 		61FFC31B2BC0213F001FA0EA /* ShaderHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */; };
+		61FFC3212BC07851001FA0EA /* ViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC3202BC07851001FA0EA /* ViewUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		614B61712BBF22EC003A4935 /* LayerEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerEffectViews.swift; sourceTree = "<group>"; };
 		61FFC3172BC0210A001FA0EA /* ArtShaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtShaders.swift; sourceTree = "<group>"; };
 		61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderHud.swift; sourceTree = "<group>"; };
+		61FFC3202BC07851001FA0EA /* ViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				611AA9E72BBC2ED300A1531B /* BookiShaderApp.swift */,
 				61FFC31C2BC02492001FA0EA /* Views */,
+				61FFC31E2BC07645001FA0EA /* Extensions */,
 				61FFC3192BC02133001FA0EA /* ViewModels */,
 				611AA9EB2BBC2ED400A1531B /* Assets.xcassets */,
 				611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */,
@@ -132,6 +135,22 @@
 				611AA9F62BBC2EE900A1531B /* ShaderArtViews.swift */,
 			);
 			path = ShaderArt;
+			sourceTree = "<group>";
+		};
+		61FFC31E2BC07645001FA0EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61FFC31F2BC07773001FA0EA /* ViewExtension */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		61FFC31F2BC07773001FA0EA /* ViewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				61FFC3202BC07851001FA0EA /* ViewUtilities.swift */,
+			);
+			path = ViewExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +243,7 @@
 				611AAA082BBC54C700A1531B /* AudioVisualizerViews.swift in Sources */,
 				61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */,
 				61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */,
+				61FFC3212BC07851001FA0EA /* ViewUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

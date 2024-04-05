@@ -58,7 +58,7 @@ struct HypnoticRipplesView: View {
     }
 }
 
-#Preview("Hypnotic Ripples") { HypnoticRipplesView() }
+#Preview("Hypnotic Ripples") { HypnoticRipplesView().enhancedPreview() }
 
 // MARK: - Crystal Caustic
 
@@ -96,7 +96,7 @@ struct BeamDropletView: View {
     }
 }
 
-#Preview("Beam Droplet") { BeamDropletView() }
+#Preview("Beam Droplet") { BeamDropletView().enhancedPreview() }
 
 // MARK: - Sine Waves
 
@@ -118,7 +118,7 @@ struct SineWavesView: View {
     }
 }
 
-#Preview("Sine Waves") { SineWavesView() }
+#Preview("Sine Waves") { SineWavesView().enhancedPreview() }
 
 // MARK: - Portal
 
@@ -137,7 +137,7 @@ struct PortalView: View {
     }
 }
 
-#Preview("Portal") { PortalView() }
+#Preview("Portal") { PortalView().enhancedPreview() }
 
 // MARK: - Neon Rug
 
@@ -158,7 +158,7 @@ struct NeonRugView: View {
     }
 }
 
-#Preview("NeonRug") { NeonRugView() }
+#Preview("NeonRug") { NeonRugView().enhancedPreview() }
 
 // MARK: - Star Nest
 
@@ -185,7 +185,7 @@ struct StarNestView: View {
     }
 }
 
-#Preview("Star Nest") { StarNestView() }
+#Preview("Star Nest") { StarNestView().enhancedPreview() }
 
 // MARK: - Blue Void
 
@@ -213,7 +213,7 @@ struct BlueVoidView: View {
     }
 }
 
-#Preview("Blue Void") { BlueVoidView() }
+#Preview("Blue Void") { BlueVoidView().enhancedPreview() }
 
 // MARK: - Spiral Riders
 
@@ -232,12 +232,12 @@ struct SpiralRidersView: View {
     }
 }
 
-#Preview("Spiral Riders") { SpiralRidersView() }
+#Preview("Spiral Riders") { SpiralRidersView().enhancedPreview() }
 
 // MARK: - Black Hole Dawn
 
 struct BlackHoleDawnView: View {
-    var paused = false
+    @Environment(ShaderHud.self) var hud: ShaderHud
     
     /// Means that the result color in the shader, might not precisely match the given color.
     var relativeColor = Color(red: 1, green: 0.025, blue: 0)
@@ -245,7 +245,7 @@ struct BlackHoleDawnView: View {
     @State private var startTime = Date.now
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: paused)) { context in
+        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
             let elapsedTime = startTime.distance(to: context.date)
             
             BlackHoleDawn(relativeColor: relativeColor, time: elapsedTime*0.03)
@@ -254,7 +254,7 @@ struct BlackHoleDawnView: View {
     }
 }
 
-#Preview("Black Hole Dawn") { BlackHoleDawnView() }
+#Preview("Black Hole Dawn") { BlackHoleDawnView().enhancedPreview() }
 
 // MARK: - Cosmic Blood
 
@@ -273,7 +273,7 @@ struct CosmicBloodView: View {
     }
 }
 
-#Preview("Cosmic Blood") { CosmicBloodView() }
+#Preview("Cosmic Blood") { CosmicBloodView().enhancedPreview() }
 
 // MARK: - Pulsating Flesh
 
@@ -296,9 +296,9 @@ struct PulsatingFleshView: View {
     }
 }
 
-// MARK: - Writhe
+#Preview("Pulsating Flesh") { PulsatingFleshView().enhancedPreview() }
 
-#Preview("Pulsating Flesh") { PulsatingFleshView() }
+// MARK: - Writhe
 
 struct WritheView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
@@ -319,7 +319,7 @@ struct WritheView: View {
     }
 }
 
-#Preview("Writhe") { WritheView() }
+#Preview("Writhe") { WritheView().enhancedPreview() }
 
 // MARK: - Clouds
 
@@ -338,7 +338,7 @@ struct CloudsView: View {
     }
 }
 
-#Preview("Clouds") { CloudsView() }
+#Preview("Clouds") { CloudsView().enhancedPreview() }
 
 // MARK: - Base Warp
 
@@ -365,7 +365,7 @@ struct BaseWarpView: View {
     }
 }
 
-#Preview("Base Warp") { BaseWarpView() }
+#Preview("Base Warp") { BaseWarpView().enhancedPreview() }
 
 // MARK: - Lens Flare
 
@@ -391,7 +391,7 @@ struct LensFlareView: View {
     }
 }
 
-#Preview("LensFlareView") { LensFlareView() }
+#Preview("LensFlareView") { LensFlareView().enhancedPreview() }
 
 // MARK: - Iris
 
@@ -413,7 +413,7 @@ struct IrisView: View {
     }
 }
 
-#Preview("Iris") { IrisView() }
+#Preview("Iris") { IrisView().enhancedPreview() }
 
 // MARK: - Retro Sun
 
@@ -432,7 +432,7 @@ struct RetroSunView: View {
     }
 }
 
-#Preview("Retro Sun") { RetroSunView() }
+#Preview("Retro Sun") { RetroSunView().enhancedPreview() }
 
 // MARK: - Turbulence
 
@@ -460,7 +460,7 @@ struct TurbulenceView: View {
     }
 }
 
-#Preview("Turbulence") { TurbulenceView() }
+#Preview("Turbulence") { TurbulenceView().enhancedPreview() }
 
 // MARK: - Lava Blobs
 
@@ -480,7 +480,7 @@ struct LavaBlobsView: View {
     }
 }
 
-#Preview("Lava Blobs") { LavaBlobsView() }
+#Preview("Lava Blobs") { LavaBlobsView().enhancedPreview() }
 
 // MARK: - TM Gyroids
 
@@ -499,7 +499,7 @@ struct TMGyroidsView: View {
     }
 }
 
-#Preview("TM Gyroids") { TMGyroidsView() }
+#Preview("TM Gyroids") { TMGyroidsView().enhancedPreview() }
 
 // MARK: - Fire Works
 
@@ -518,7 +518,7 @@ struct FireWorksView: View {
     }
 }
 
-#Preview("Fire Works") { FireWorksView() }
+#Preview("Fire Works") { FireWorksView().enhancedPreview() }
 
 // MARK: - Explosion Cloud
 
@@ -537,7 +537,7 @@ struct ExplosionCloudView: View {
     }
 }
 
-#Preview("Explosion Cloud") { ExplosionCloudView() }
+#Preview("Explosion Cloud") { ExplosionCloudView().enhancedPreview() }
 
 // MARK: - Mod Fan
 
@@ -556,7 +556,7 @@ struct ModFanView: View {
     }
 }
 
-#Preview("Mod Fan") { ModFanView() }
+#Preview("Mod Fan") { ModFanView().enhancedPreview() }
 
 // MARK: - Star Field
 
@@ -575,7 +575,7 @@ struct StarFieldView: View {
     }
 }
 
-#Preview("Star Field") { StarFieldView() }
+#Preview("Star Field") { StarFieldView().enhancedPreview() }
 
 // MARK: - Singularity
 
@@ -594,7 +594,7 @@ struct SingularityView: View {
     }
 }
 
-#Preview("Singularity") { SingularityView() }
+#Preview("Singularity") { SingularityView().enhancedPreview() }
 
 // MARK: - Glowing Marbling Black
 
@@ -623,7 +623,7 @@ struct GlowingMarblingBlackView: View {
     }
 }
 
-#Preview("Glowing Marbling Black") { GlowingMarblingBlackView() }
+#Preview("Glowing Marbling Black") { GlowingMarblingBlackView().enhancedPreview() }
 
 // MARK: - Electric Field
 
@@ -642,7 +642,7 @@ struct ElectricFieldView: View {
     }
 }
 
-#Preview("Electric Field") { ElectricFieldView() }
+#Preview("Electric Field") { ElectricFieldView().enhancedPreview() }
 
 // MARK: - FBM Lightning
 
@@ -663,7 +663,7 @@ struct FBMLightningView: View {
     }
 }
 
-#Preview("FBM Lightning") { FBMLightningView() }
+#Preview("FBM Lightning") { FBMLightningView().enhancedPreview() }
 
 // MARK: - Wet Neural Network
 
@@ -691,7 +691,7 @@ struct WetNeuralNetworkView: View {
     }
 }
 
-#Preview("Wet Neural Network") { WetNeuralNetworkView() }
+#Preview("Wet Neural Network") { WetNeuralNetworkView().enhancedPreview() }
 
 // MARK: - Lightning01
 
@@ -720,4 +720,4 @@ struct Lightning01View: View {
     }
 }
 
-#Preview("Lightning01") { Lightning01View() }
+#Preview("Lightning01") { Lightning01View().enhancedPreview() }
