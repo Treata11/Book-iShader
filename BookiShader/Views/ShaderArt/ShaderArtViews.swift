@@ -613,13 +613,13 @@ struct GlowingMarblingBlackView: View {
             GlowingMarblingBlack(time: elapsedTime*0.5, location: touch)
         }
         .ignoresSafeArea()
-//        .gesture(
-//            DragGesture(minimumDistance: 0)
-//                .onChanged { value in
-//                    let translatedValue = CGSize(width: value.translation.width/175, height: value.translation.height/175).mapZeroToOne()
-//                    self.touch = translatedValue
-//                }
-//        )
+        .gesture(
+            DragGesture(minimumDistance: 0)
+                .onChanged { value in
+                    let translatedValue = CGPoint(x: (value.location.x/100), y: (value.location.y/100))
+                    self.touch = translatedValue
+                }
+        )
     }
 }
 
