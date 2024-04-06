@@ -33,9 +33,9 @@ let shaderArtViews: [AnyView] = [
 ]
 
 /*
- FIXME: @State private var startTime = Date.now
+ FIXME: @State private var hud.startTime = Date.now
  .now is being problematic ...
-    let elapsedTime = startTime.distance(to: context.date)
+    let elapsedTime = hud.startTime.distance(to: context.date)
  
  The distance to .now would be extended even when the shader is paused.
  So, you'll never pause the shader at a given time ...
@@ -45,12 +45,10 @@ let shaderArtViews: [AnyView] = [
 
 struct HypnoticRipplesView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             HypnoticRipples(time: elapsedTime)
         }
@@ -64,12 +62,10 @@ struct HypnoticRipplesView: View {
 
 struct CrystalCausticView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.017, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             CrystalCaustic(time: elapsedTime)
         }
@@ -77,18 +73,16 @@ struct CrystalCausticView: View {
     }
 }
 
-#Preview("Crystal Caustic") { CrystalCausticView() }
+#Preview("Crystal Caustic") { CrystalCausticView().enhancedPreview() }
 
 // MARK: - Beam Droplet
 
 struct BeamDropletView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             BeamDroplet(time: elapsedTime)
         }
@@ -105,12 +99,10 @@ struct SineWavesView: View {
     
     var relativeColor = Color(red: 0.2, green: 0.2, blue: 0.3)
     var waveCount = 7
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             SineWaves(relativeColor: relativeColor, time: elapsedTime, waveCount: waveCount)
         }
@@ -124,12 +116,10 @@ struct SineWavesView: View {
 
 struct PortalView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             Portal(time: elapsedTime)
         }
@@ -145,12 +135,10 @@ struct NeonRugView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     var neonEffect = true
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             NeonRug(time: elapsedTime, neonEffect: neonEffect)
         }
@@ -165,13 +153,11 @@ struct NeonRugView: View {
 struct StarNestView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    @State private var startTime = Date.now
-    
     @State private var translation: CGPoint = .zero
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             StarNest(time: elapsedTime * 0.5, location: translation)
         }
@@ -192,13 +178,11 @@ struct StarNestView: View {
 struct BlueVoidView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    @State private var startTime = Date.now
-    
     @State private var touch: CGPoint = .zero
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             BlueVoid(time: elapsedTime, location: touch)
         }
@@ -219,12 +203,10 @@ struct BlueVoidView: View {
 
 struct SpiralRidersView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.09, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             SpiralRiders(time: elapsedTime * 0.8)
         }
@@ -241,12 +223,10 @@ struct BlackHoleDawnView: View {
     
     /// Means that the result color in the shader, might not precisely match the given color.
     var relativeColor = Color(red: 1, green: 0.025, blue: 0)
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             BlackHoleDawn(relativeColor: relativeColor, time: elapsedTime*0.03)
         }
@@ -260,12 +240,10 @@ struct BlackHoleDawnView: View {
 
 struct CosmicBloodView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             CosmicBlood(time: elapsedTime * 0.04)
         }
@@ -279,13 +257,11 @@ struct CosmicBloodView: View {
 
 struct PulsatingFleshView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
     @State private var touch: CGPoint = .zero
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             PulsatingFlesh(time: elapsedTime, location: touch)
         }
@@ -302,13 +278,11 @@ struct PulsatingFleshView: View {
 
 struct WritheView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
     @State private var touchLocation: CGPoint = .zero
     
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             Writhe(time: elapsedTime, location: touchLocation)
         }
@@ -325,12 +299,10 @@ struct WritheView: View {
 
 struct CloudsView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             Clouds(time: elapsedTime)
         }
@@ -344,13 +316,11 @@ struct CloudsView: View {
 
 struct BaseWarpView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
     @State private var translation: CGPoint = .zero
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             BaseWarp(time: elapsedTime, location: translation)
                 .gesture(
@@ -371,13 +341,11 @@ struct BaseWarpView: View {
 
 struct LensFlareView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
     @State private var location: CGPoint = .zero
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.08, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             LensFlare(time: elapsedTime*0.5, location: location)
                 .gesture(
@@ -400,12 +368,10 @@ struct IrisView: View {
     
     var irisColor = Color(red: 0, green: 0.3, blue: 0.4)
     var corneaEdgeHue: Color = .init(red: 0.9, green: 0.6, blue: 0.2)
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             Iris(irisColor: irisColor, time: elapsedTime, corneaEdgeHue: corneaEdgeHue)
         }
@@ -419,12 +385,10 @@ struct IrisView: View {
 
 struct RetroSunView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.1, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             RetroSun(time: elapsedTime)
         }
@@ -439,13 +403,11 @@ struct RetroSunView: View {
 struct TurbulenceView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    @State private var startTime = Date.now
-    
     @State private var touch: CGPoint = .zero
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.017, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             Turbulence(time: elapsedTime, location: touch)
         }
@@ -466,12 +428,10 @@ struct TurbulenceView: View {
 
 struct LavaBlobsView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             LavaBlobs(time: elapsedTime)
         }
@@ -486,12 +446,10 @@ struct LavaBlobsView: View {
 
 struct TMGyroidsView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.018, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             TMGyroids(time: elapsedTime)
         }
@@ -505,12 +463,10 @@ struct TMGyroidsView: View {
 
 struct FireWorksView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             FireWorks(time: elapsedTime)
         }
@@ -524,12 +480,10 @@ struct FireWorksView: View {
 
 struct ExplosionCloudView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             ExplosionCloud(time: elapsedTime)
         }
@@ -543,12 +497,10 @@ struct ExplosionCloudView: View {
 
 struct ModFanView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             ModFan(time: elapsedTime*0.2)
         }
@@ -562,12 +514,10 @@ struct ModFanView: View {
 
 struct StarFieldView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             StarField(time: elapsedTime)
         }
@@ -581,12 +531,10 @@ struct StarFieldView: View {
 
 struct SingularityView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             Singularity(time: elapsedTime)
         }
@@ -602,13 +550,11 @@ struct SingularityView: View {
 struct GlowingMarblingBlackView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    @State private var startTime = Date.now
-    
     @State private var touch: CGPoint = .zero
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             GlowingMarblingBlack(time: elapsedTime*0.5, location: touch)
         }
@@ -629,12 +575,10 @@ struct GlowingMarblingBlackView: View {
 
 struct ElectricFieldView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             ElectricField(time: elapsedTime)
         }
@@ -650,12 +594,10 @@ struct FBMLightningView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     var lightningColor = Color(red: 0.2, green: 0.3, blue: 0.8)
-    
-    @State private var startTime = Date.now
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             FBMLightning(lightningColor: lightningColor, time: elapsedTime)
         }
@@ -671,13 +613,12 @@ struct WetNeuralNetworkView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     var color = Color(red: 0.25, green: 0.5, blue: 1)
-
-    @State private var startTime = Date.now
+    
     @State private var touch: CGPoint = .zero
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date + 700)
+            let elapsedTime = hud.startTime.distance(to: context.date + 700)
             
             WetNeuralNetwork(color: color, time: elapsedTime, location: touch)
         }
@@ -699,13 +640,11 @@ struct Lightning01View: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     var lightningColor: Color = .init(red: 1.2, green: 0.2, blue: 0.3)
-    
-    @State private var startTime = Date.now
     @State private var touch: CGPoint = .zero
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             Lightning01(lightningColor: lightningColor, time: elapsedTime, location: touch)
         }
