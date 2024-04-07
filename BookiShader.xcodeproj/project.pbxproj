@@ -22,6 +22,7 @@
 		611AAA0C2BBC5F9000A1531B /* Be Khod Ay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */; };
 		614B61702BBF167D003A4935 /* DistortionEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */; };
 		614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B61712BBF22EC003A4935 /* LayerEffectViews.swift */; };
+		61A488D22BC2A5AA003BE4F2 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A488D12BC2A5AA003BE4F2 /* Gradients.swift */; };
 		61B7ABB02BC1DFC400437D33 /* DemoAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */; };
 		61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC3172BC0210A001FA0EA /* ArtShaders.swift */; };
 		61FFC31B2BC0213F001FA0EA /* ShaderHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */; };
@@ -40,6 +41,7 @@
 		611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Be Khod Ay.mp3"; sourceTree = "<group>"; };
 		614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionEffectViews.swift; sourceTree = "<group>"; };
 		614B61712BBF22EC003A4935 /* LayerEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerEffectViews.swift; sourceTree = "<group>"; };
+		61A488D12BC2A5AA003BE4F2 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAnimation.swift; sourceTree = "<group>"; };
 		61FFC3172BC0210A001FA0EA /* ArtShaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtShaders.swift; sourceTree = "<group>"; };
 		61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderHud.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		61A488D02BC2A58D003BE4F2 /* Gradients */ = {
+			isa = PBXGroup;
+			children = (
+				61A488D12BC2A5AA003BE4F2 /* Gradients.swift */,
+			);
+			path = Gradients;
+			sourceTree = "<group>";
+		};
 		61B7ABAE2BC1DFA600437D33 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +152,7 @@
 		61FFC31D2BC024BB001FA0EA /* ShaderArt */ = {
 			isa = PBXGroup;
 			children = (
+				61A488D02BC2A58D003BE4F2 /* Gradients */,
 				61FFC3172BC0210A001FA0EA /* ArtShaders.swift */,
 				611AA9F62BBC2EE900A1531B /* ShaderArtViews.swift */,
 			);
@@ -246,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A488D22BC2A5AA003BE4F2 /* Gradients.swift in Sources */,
 				611AA9E82BBC2ED300A1531B /* BookiShaderApp.swift in Sources */,
 				611AA9F72BBC2EE900A1531B /* ShaderArtViews.swift in Sources */,
 				61FFC31B2BC0213F001FA0EA /* ShaderHud.swift in Sources */,
