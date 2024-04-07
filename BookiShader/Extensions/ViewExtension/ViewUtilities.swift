@@ -58,3 +58,16 @@ extension Color {
     static let cream = Color(252, 249, 232)
 }
 
+// MARK: - UIDevice
+
+#if os(iOS)
+extension UIDevice {
+    static var isPad: Bool {
+        UIDevice.current.userInterfaceIdiom == .pad
+    }
+    
+    static var isPhone: Bool {
+        UIDevice.current.userInterfaceIdiom == .phone
+    }
+}
+#endif
