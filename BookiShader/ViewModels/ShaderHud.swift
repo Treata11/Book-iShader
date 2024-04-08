@@ -44,5 +44,10 @@ class ShaderHud {
             }
         }
     }
+    
+    // MARK: - Intent(s)
+    
+    func rewind(seconds: TimeInterval) { startTime = startTime.addingTimeInterval(seconds) }
+    
+    func fastForward(seconds: TimeInterval) { startTime = startTime.addingTimeInterval(-seconds) }
 }
-//5 + 15-paused
