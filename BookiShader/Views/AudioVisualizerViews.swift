@@ -5,10 +5,18 @@
  Created by Treata Norouzi on 4/2/24.
  
  Abstract:
+ The Views in which AudioVisualizer shaders are demonstrated in
 */
 
 import AudioVisualizer
 import SwiftUI
+
+let audioVisualizerViews: [AnyView] = [
+    AnyView(AudioEclipseView()), AnyView(ShadesOfMusicView()),
+    AnyView(SineSoundWavesView()), AnyView(GlowingSoundParticlesView()),
+    AnyView(UniverseWithinView()), AnyView(GalaxyVisualsView()),
+    AnyView(RoundAudioSpecturmView()), AnyView(WavesRemixView())
+]
 
 // TODO: New File
 extension Bundle {
@@ -22,18 +30,15 @@ extension Bundle {
 // MARK: - Audio Eclipse
 
 struct AudioEclipseView: View {
-    @Bindable var audioManager: BassAudioEngine
-    
-    @State var paused = false
-    
-    @State private var startTime = Date.now
+    @Environment(BassAudioEngine.self) var audioManager
+    @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
         GeometryReader {
             let size = $0.size
             
-            TimelineView(.animation(minimumInterval: 0.025, paused: paused)) { context in
-                let elapsedTime = startTime.distance(to: context.date)
+            TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
+                let elapsedTime = hud.startTime.distance(to: context.date)
                 
                 AudioEclipse(time: elapsedTime, fft: audioManager.muSpectrum)
                     .overlay {
@@ -51,19 +56,20 @@ struct AudioEclipseView: View {
 }
 
 #Preview("Audio Eclipse") {
-    AudioEclipseView(audioManager: .init(filePath: Bundle.musicPath))
+    AudioEclipseView()
+        .environment(BassAudioEngine(filePath: Bundle.musicPath))
+        .enhancedPreview()
 }
 
 // MARK: - Shades of Music
 
 struct ShadesOfMusicView: View {
-    @Bindable var audioManager: BassAudioEngine
-    
-    @State private var startTime = Date.now
+    @Environment(BassAudioEngine.self) var audioManager
+    @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             ShadesOfMusic(time: elapsedTime, fft: audioManager.muSpectrum)
         }
@@ -72,19 +78,20 @@ struct ShadesOfMusicView: View {
 }
 
 #Preview("Shades of Music") {
-    ShadesOfMusicView(audioManager: .init(filePath: Bundle.musicPath))
+    ShadesOfMusicView()
+        .environment(BassAudioEngine(filePath: Bundle.musicPath))
+        .enhancedPreview()
 }
 
 // MARK: - Sine Sound Waves
 
 struct SineSoundWavesView: View {
-    @Bindable var audioManager: BassAudioEngine
-    
-    @State private var startTime = Date.now
+    @Environment(BassAudioEngine.self) var audioManager
+    @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.025)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+        TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             SineSoundWaves(time: elapsedTime, fft: audioManager.muSpectrum)
         }
@@ -93,19 +100,20 @@ struct SineSoundWavesView: View {
 }
 
 #Preview("Sine Sound Waves") {
-    SineSoundWavesView(audioManager: .init(filePath: Bundle.musicPath))
+    SineSoundWavesView()
+        .environment(BassAudioEngine(filePath: Bundle.musicPath))
+        .enhancedPreview()
 }
 
 // MARK: - Glowing Sound Particles
 
 struct GlowingSoundParticlesView: View {
-    @Bindable var audioManager: BassAudioEngine
-    
-    @State private var startTime = Date.now
+    @Environment(BassAudioEngine.self) var audioManager
+    @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             GlowingSoundParticles(time: elapsedTime, fft: audioManager.muSpectrum)
         }
@@ -114,24 +122,26 @@ struct GlowingSoundParticlesView: View {
 }
 
 #Preview("Glowing Sound Particles") {
-    GlowingSoundParticlesView(audioManager: .init(filePath: Bundle.musicPath))
+    GlowingSoundParticlesView()
+        .environment(BassAudioEngine(filePath: Bundle.musicPath))
+        .enhancedPreview()
 }
 
 // MARK: - Universe Within
 
 struct UniverseWithinView: View {
-    @Bindable var audioManager: BassAudioEngine
+    @Environment(BassAudioEngine.self) var audioManager
+    @Environment(ShaderHud.self) var hud: ShaderHud
     
-    @State private var startTime = Date.now
     @State private var touch = CGPoint.zero
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.035)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+        TimelineView(.animation(minimumInterval: 0.035, paused: hud.paused)) { context in
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             UniverseWithin(
                 time: elapsedTime,
-                fft: audioManager.muSpectrum,
+                fft: audioManager.spectrum,
                 location: touch)
         }
         .ignoresSafeArea()
@@ -145,19 +155,20 @@ struct UniverseWithinView: View {
 }
 
 #Preview("Universe Within") {
-    UniverseWithinView(audioManager: .init(filePath: Bundle.musicPath))
+    UniverseWithinView()
+        .environment(BassAudioEngine(filePath: Bundle.musicPath))
+        .enhancedPreview()
 }
 
 // MARK: - Galaxy Visuals
 
 struct GalaxyVisualsView: View {
-    @Bindable var audioManager: BassAudioEngine
-    
-    @State private var startTime = Date.now
+    @Environment(BassAudioEngine.self) var audioManager
+    @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.0167)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+        TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             GalaxyVisuals(time: elapsedTime, fft: audioManager.muSpectrum)
         }
@@ -166,13 +177,15 @@ struct GalaxyVisualsView: View {
 }
 
 #Preview("Galaxy Visuals") {
-    GalaxyVisualsView(audioManager: .init(filePath: Bundle.musicPath))
+    GalaxyVisualsView()
+        .environment(BassAudioEngine(filePath: Bundle.musicPath))
+        .enhancedPreview()
 }
 
 // MARK: - Round Audio Specturm
 
 struct RoundAudioSpecturmView: View {
-    @Bindable var audioManager: BassAudioEngine
+    @Environment(BassAudioEngine.self) var audioManager
     
     var backgroundColor: Color = .black
     var rayCount: Int = 78
@@ -189,19 +202,19 @@ struct RoundAudioSpecturmView: View {
 }
 
 #Preview("Round Audio Specturm") {
-    RoundAudioSpecturmView(audioManager: .init(filePath: Bundle.musicPath))
+    RoundAudioSpecturmView()
+        .environment(BassAudioEngine(filePath: Bundle.musicPath))
 }
 
 // MARK: - Waves Remix
 
 struct WavesRemixView: View {
-    @Bindable var audioManager: BassAudioEngine
-    
-    @State private var startTime = Date.now
+    @Environment(BassAudioEngine.self) var audioManager
+    @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02)) { context in
-            let elapsedTime = startTime.distance(to: context.date)
+        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
+            let elapsedTime = hud.startTime.distance(to: context.date)
             
             WavesRemix(time: elapsedTime, fft: audioManager.muSpectrum)
         }
@@ -210,7 +223,9 @@ struct WavesRemixView: View {
 }
 
 #Preview("Waves Remix") {
-    WavesRemixView(audioManager: .init(filePath: Bundle.musicPath))
+    WavesRemixView()
+        .environment(BassAudioEngine(filePath: Bundle.musicPath))
+        .enhancedPreview()
 }
 
 #endif
