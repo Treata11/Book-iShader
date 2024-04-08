@@ -55,26 +55,3 @@ struct HUD: View {
 }
 
 #Preview("HUD") { HUD().enhancedPreview(preferredColorScheme: .light) }
-
-// TODO: - Add in ColorExtensions -
-
-extension Color {
-    #if os(macOS)
-    
-    static let lightGray = Color(nsColor: .lightGray)
-    static let darkGray = Color(nsColor: .darkGray)
-
-    #else
-    
-    static let systemGray = Color(uiColor: .systemGray)
-    static let systemGray2 = Color(uiColor: .systemGray2)
-    static let systemGray3 = Color(uiColor: .systemGray3)
-    static let systemGray4 = Color(uiColor: .systemGray4)
-    static let systemGray5 = Color(uiColor: .systemGray5)
-    static let systemGray6 = Color(uiColor: .systemGray6)
-    
-    static let lightGray = Color.systemGray6
-    static let darkGray = Color.systemGray
-    
-    #endif
-}

@@ -40,27 +40,47 @@ extension View {
 extension Color {
     /// #SyntacticSugar
     init(_ red: Double, _ green: Double, _ blue: Double) {
-        self.init(red: red/255, green: green/255, blue: blue/255)
+        self.init(red: red, green: green, blue: blue)
     }
 }
     
 extension Color {
-    static let prussianBlue = Color(15, 48, 91)
-    static let blueSapphire = Color(27, 86, 177)
-    static let almond = Color(171, 120, 78)
-    static let caramel = Color(182, 114, 51)
-    static let greenEye = Color(125, 149, 109)
-    static let slateGray = Color(87, 92, 98)
-    static let charcoalGray = Color(53, 55, 57)
-    static let steel = Color(81, 81, 81)
-    static let shadowGray = Color(41, 42, 47)
-    static let midnightGray = Color(36, 39, 48)
-    static let cream = Color(252, 249, 232)
+    static let prussianBlue = Color(0.0588, 0.1882, 0.3569)
+    static let blueSapphire = Color(0.1059, 0.3373, 0.6941)
+    static let almond = Color(0.6706, 0.4706, 0.3056)
+    static let caramel = Color(0.7138, 0.4471, 0.2)
+    static let greenEye = Color(0.4902, 0.5843, 0.4275)
+    static let slateGray = Color(0.3412, 0.3608, 0.3843)
+    static let charcoalGray = Color(0.2078, 0.2157, 0.2235)
+    static let steel = Color(0.3176, 0.3176, 0.3176)
+    static let shadowGray = Color(0.1608, 0.1647, 0.1843)
+    static let midnightGray = Color(0.1412, 0.1529, 0.1882)
+    static let cream = Color(0.9882, 0.9765, 0.9098)
+    
+#if os(macOS)
+
+    static let lightGray = Color(nsColor: .lightGray)
+    static let darkGray = Color(nsColor: .darkGray)
+
+#else
+
+    static let systemGray = Color(uiColor: .systemGray)
+    static let systemGray2 = Color(uiColor: .systemGray2)
+    static let systemGray3 = Color(uiColor: .systemGray3)
+    static let systemGray4 = Color(uiColor: .systemGray4)
+    static let systemGray5 = Color(uiColor: .systemGray5)
+    static let systemGray6 = Color(uiColor: .systemGray6)
+
+    static let lightGray = Color.systemGray6
+    static let darkGray = Color.systemGray
+
+#endif
 }
 
 // MARK: - UIDevice
 
 #if os(iOS)
+
 extension UIDevice {
     static var isPad: Bool {
         UIDevice.current.userInterfaceIdiom == .pad
@@ -70,4 +90,5 @@ extension UIDevice {
         UIDevice.current.userInterfaceIdiom == .phone
     }
 }
+
 #endif
