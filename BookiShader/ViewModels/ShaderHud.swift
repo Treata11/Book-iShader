@@ -13,6 +13,14 @@ import Foundation
 
 // !!!: WIP
 
+/*
+ # Archived
+ 
+ This version of ShaderHud, would no longer be used, since all the implementations
+ of the timer are now moved to the ViewModel itself and the SwiftUI's TimeLineView
+ is no longer used!
+*/
+
 @Observable
 class ShaderHud {
     
@@ -50,4 +58,104 @@ class ShaderHud {
     func rewind(seconds: TimeInterval) { startTime = startTime.addingTimeInterval(seconds) }
     
     func fastForward(seconds: TimeInterval) { startTime = startTime.addingTimeInterval(-seconds) }
+}
+
+
+
+
+// MARK: - Experimental: Timer Tests
+
+// TODO: Rename to ShaderHud & rewrite the Views that are using the previous implementation of ShaderHud.
+// That means that TimeLineView would no longer be needed.
+
+@Observable
+class ShaderManager {
+    
+    var fps: Float = 60
+    
+    /// The rate of the playback, `Playback Speed`
+    var rate: PlaybackSpeed = .one
+    
+    init(fps: Float = 60, rate: PlaybackSpeed = .one, paused: Bool = true) {
+        self.fps = fps
+        self.rate = rate
+        self.paused = paused
+    }
+    
+    var paused = true {
+        willSet {
+            if !newValue {
+                if stopwatchTimer == nil {
+                    startTimer()
+                }
+            } else {
+                pauseTimer()
+            }
+        }
+    }
+    
+    /// Timer object to track elapsed time
+    private(set) var stopwatchTimer: Timer?
+    
+    /// Variable to keep track of elapsed time
+    private(set) var elapsedTime: TimeInterval = 0
+    
+    // MARK: - Instance Methods
+    
+    private func startTimer() {
+        self.stopwatchTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(1.0/fps), repeats: true, block: { [weak self] timer in
+            // Update the elapsed time
+            self?.elapsedTime += timer.timeInterval * (self?.rate ?? .one).rawValue
+        })
+    }
+    
+    func pauseTimer() {
+        self.stopwatchTimer?.invalidate()
+        stopwatchTimer = nil
+    }
+    
+    func stopTimer() {
+        if let timer = stopwatchTimer {
+            paused = true
+            timer.invalidate()
+            stopwatchTimer = nil
+            elapsedTime = 0
+        }
+    }
+    
+    func toggleTimer() { self.paused.toggle() }
+    
+    func formattedElapsedTime() -> String {
+        // Format the elapsed time as a stopwatch time
+        let minutes = Int(elapsedTime) / 60 % 60
+        let seconds = Int(elapsedTime) % 60
+        let milliseconds = Int(elapsedTime * 100) % 100
+        
+        // Return the formatted time
+        return String(format: "%02d:%02d:%02d", minutes, seconds, milliseconds)
+    }
+}
+
+enum PlaybackSpeed: Double, CaseIterable, Identifiable {
+    case pointOne = 0.1
+    case pointTwo = 0.2
+    case pointTwentyFive = 0.25
+    case pointThree = 0.3
+    case pointFour = 0.4
+    case pointFive = 0.5
+    case pointSix = 0.6
+    case pointSeven = 0.7
+    case pointEight = 0.8
+    case pointNine = 0.9
+    case one = 1.0
+    case onePointTwoFive = 1.25
+    case onePointFive = 1.5
+    case onePointSevenFive = 1.75
+    case two = 2.0
+    case twoPointTwoFive = 2.25
+    case twoPointFive = 2.5
+    case twoPointSevenFive = 2.75
+    case three = 3.0
+
+    var id: Double { self.rawValue }
 }
