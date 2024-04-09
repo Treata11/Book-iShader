@@ -28,11 +28,7 @@ struct RotatingGradientView: View {
     var endColor: Color = .yellow
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.07, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            RotatingGradient(time: elapsedTime*0.25, startColor: startColor, endColor: endColor)
-        }
+        RotatingGradient(time: hud.elapsedTime, startColor: startColor, endColor: endColor)
     }
 }
 
@@ -44,11 +40,7 @@ struct ChromaGradientsView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            ChromaGradients(time: elapsedTime)
-        }
+        ChromaGradients(time: hud.elapsedTime)
     }
 }
 
@@ -61,11 +53,7 @@ struct FluidGradientView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            FluidGradient(time: elapsedTime)
-        }
+        FluidGradient(time: hud.elapsedTime)
     }
 }
 
@@ -77,11 +65,7 @@ struct GradientifyView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            Gradientify(time: elapsedTime * 0.4)
-        }
+        Gradientify(time: hud.elapsedTime)
     }
 }
 
@@ -96,11 +80,7 @@ struct GradientFlowView: View {
     var colors: [Color] = [.orange, .cyan, .pink, .indigo]
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            GradientFlow(colors: colors, time: elapsedTime)
-        }
+        GradientFlow(colors: colors, time: hud.elapsedTime)
     }
 }
 
@@ -114,11 +94,7 @@ struct RainbowSherbetView: View {
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            RainbowSherbet(time: elapsedTime * 0.25, location: touch)
-        }
+        RainbowSherbet(time: hud.elapsedTime, location: touch)
         .gesture(
             DragGesture()
                 .onChanged { value in
@@ -139,11 +115,7 @@ struct CrumpledWaveView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            CrumpledWave(time: elapsedTime)
-        }
+        CrumpledWave(time: hud.elapsedTime)
     }
 }
 
@@ -157,11 +129,7 @@ struct GlossyGradientsView: View {
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            GlossyGradients(time: elapsedTime, location: touch)
-        }
+        GlossyGradients(time: hud.elapsedTime, location: touch)
         .gesture(
             DragGesture().onChanged { touch = $0.location }
         )
@@ -179,12 +147,7 @@ struct ColorWindView: View {
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            ColorWind(time: elapsedTime, location: touch)
-        }
-//        .background(Color.black)
+        ColorWind(time: hud.elapsedTime, location: touch)
         .gesture(
             DragGesture()
                 .onChanged { 

@@ -35,7 +35,7 @@ let shaderArtViews: [AnyView] = [
 /*
  FIXME: @State private var hud.startTime = Date.now
  .now is being problematic ...
-    let elapsedTime = hud.startTime.distance(to: context.date)
+    let hud.elapsedTime = hud.startTime.distance(to: context.date)
  
  The distance to .now would be extended even when the shader is paused.
  So, you'll never pause the shader at a given time ...
@@ -47,12 +47,7 @@ struct HypnoticRipplesView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            HypnoticRipples(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        HypnoticRipples(time: hud.elapsedTime)
     }
 }
 
@@ -64,12 +59,7 @@ struct CrystalCausticView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.017, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            CrystalCaustic(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        CrystalCaustic(time: hud.elapsedTime)
     }
 }
 
@@ -81,12 +71,7 @@ struct BeamDropletView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            BeamDroplet(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        BeamDroplet(time: hud.elapsedTime)
     }
 }
 
@@ -101,12 +86,7 @@ struct SineWavesView: View {
     var waveCount = 7
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            SineWaves(relativeColor: relativeColor, time: elapsedTime, waveCount: waveCount)
-        }
-        .ignoresSafeArea()
+        SineWaves(relativeColor: relativeColor, time: hud.elapsedTime, waveCount: waveCount)
     }
 }
 
@@ -118,12 +98,7 @@ struct PortalView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            Portal(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        Portal(time: hud.elapsedTime)
     }
 }
 
@@ -137,12 +112,7 @@ struct NeonRugView: View {
     var neonEffect = true
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            NeonRug(time: elapsedTime, neonEffect: neonEffect)
-        }
-        .ignoresSafeArea()
+        NeonRug(time: hud.elapsedTime, neonEffect: neonEffect)
     }
 }
 
@@ -153,20 +123,13 @@ struct NeonRugView: View {
 struct StarNestView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    @State private var translation: CGPoint = .zero
+    @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            StarNest(time: elapsedTime * 0.5, location: translation)
-        }
-        .ignoresSafeArea()
+        StarNest(time: hud.elapsedTime, location: touch)
         .gesture(
             DragGesture()
-                .onChanged { value in
-                    self.translation = value.location
-                }
+                .onChanged { self.touch = $0.location }
         )
     }
 }
@@ -181,12 +144,7 @@ struct BlueVoidView: View {
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            BlueVoid(time: elapsedTime, location: touch)
-        }
-        .ignoresSafeArea()
+        BlueVoid(time: hud.elapsedTime, location: touch)
         .gesture(
             DragGesture()
                 .onChanged { value in
@@ -205,12 +163,7 @@ struct SpiralRidersView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.09, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            SpiralRiders(time: elapsedTime * 0.8)
-        }
-        .ignoresSafeArea()
+        SpiralRiders(time: hud.elapsedTime)
     }
 }
 
@@ -222,15 +175,10 @@ struct BlackHoleDawnView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     /// Means that the result color in the shader, might not precisely match the given color.
-    var relativeColor = Color(red: 1, green: 0.025, blue: 0)
+    var relativeColor = Color(1, 0.025, 0)
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            BlackHoleDawn(relativeColor: relativeColor, time: elapsedTime*0.03)
-        }
-        .ignoresSafeArea()
+        BlackHoleDawn(relativeColor: relativeColor, time: hud.elapsedTime)
     }
 }
 
@@ -242,12 +190,7 @@ struct CosmicBloodView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            CosmicBlood(time: elapsedTime * 0.04)
-        }
-        .ignoresSafeArea()
+        CosmicBlood(time: hud.elapsedTime)
     }
 }
 
@@ -257,14 +200,11 @@ struct CosmicBloodView: View {
 
 struct PulsatingFleshView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
+    
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            PulsatingFlesh(time: elapsedTime, location: touch)
-        }
+        PulsatingFlesh(time: hud.elapsedTime, location: touch)
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onChanged { self.touch = $0.location }
@@ -278,14 +218,11 @@ struct PulsatingFleshView: View {
 
 struct WritheView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
+    
     @State private var touchLocation: CGPoint = .zero
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            Writhe(time: elapsedTime, location: touchLocation)
-        }
+        Writhe(time: hud.elapsedTime, location: touchLocation)
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onChanged { self.touchLocation = $0.location }
@@ -301,12 +238,7 @@ struct CloudsView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            Clouds(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        Clouds(time: hud.elapsedTime)
     }
 }
 
@@ -319,19 +251,14 @@ struct BaseWarpView: View {
     @State private var translation: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            BaseWarp(time: elapsedTime, location: translation)
-                .gesture(
-                    DragGesture(minimumDistance: 0)
-                        .onChanged { value in
-                            self.translation = value.location
-                        }
-                )
-        }
-        .ignoresSafeArea()
-        .background(Color.black)
+        BaseWarp(time: hud.elapsedTime, location: translation)
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { value in
+                        self.translation = value.location
+                    }
+            )
+            .background(Color.black)
     }
 }
 
@@ -344,18 +271,11 @@ struct LensFlareView: View {
     @State private var location: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.08, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            LensFlare(time: elapsedTime*0.5, location: location)
-                .gesture(
-                    DragGesture(minimumDistance: 0)
-                        .onChanged { value in
-                            self.location = value.location
-                        }
-                )
-        }
-        .ignoresSafeArea()
+        LensFlare(time: hud.elapsedTime, location: location)
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { self.location = $0.location }
+            )
     }
 }
 
@@ -370,12 +290,7 @@ struct IrisView: View {
     var corneaEdgeHue: Color = .init(red: 0.9, green: 0.6, blue: 0.2)
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            Iris(irisColor: irisColor, time: elapsedTime, corneaEdgeHue: corneaEdgeHue)
-        }
-        .ignoresSafeArea()
+        Iris(irisColor: irisColor, time: hud.elapsedTime, corneaEdgeHue: corneaEdgeHue)
     }
 }
 
@@ -387,12 +302,7 @@ struct RetroSunView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.1, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            RetroSun(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        RetroSun(time: hud.elapsedTime)
     }
 }
 
@@ -406,18 +316,11 @@ struct TurbulenceView: View {
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.017, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            Turbulence(time: elapsedTime, location: touch)
-        }
-        .ignoresSafeArea()
+        Turbulence(time: hud.elapsedTime, location: touch)
         .background(Color.black)
         .gesture(
             DragGesture()
-                .onChanged { value in
-                    self.touch = value.location
-                }
+                .onChanged { self.touch = $0.location }
         )
     }
 }
@@ -430,13 +333,8 @@ struct LavaBlobsView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            LavaBlobs(time: elapsedTime)
-        }
-        .ignoresSafeArea()
-        .background(Color.black)
+        LavaBlobs(time: hud.elapsedTime)
+            .background(Color.black)
     }
 }
 
@@ -448,12 +346,7 @@ struct TMGyroidsView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.018, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            TMGyroids(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        TMGyroids(time: hud.elapsedTime)
     }
 }
 
@@ -465,12 +358,7 @@ struct FireWorksView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            FireWorks(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        FireWorks(time: hud.elapsedTime)
     }
 }
 
@@ -482,12 +370,7 @@ struct ExplosionCloudView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            ExplosionCloud(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        ExplosionCloud(time: hud.elapsedTime)
     }
 }
 
@@ -499,12 +382,7 @@ struct ModFanView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.05, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            ModFan(time: elapsedTime*0.2)
-        }
-        .ignoresSafeArea()
+            ModFan(time: hud.elapsedTime)
     }
 }
 
@@ -516,12 +394,7 @@ struct StarFieldView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            StarField(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        StarField(time: hud.elapsedTime)
     }
 }
 
@@ -533,12 +406,7 @@ struct SingularityView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            Singularity(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        Singularity(time: hud.elapsedTime)
     }
 }
 
@@ -553,19 +421,14 @@ struct GlowingMarblingBlackView: View {
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.03, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            GlowingMarblingBlack(time: elapsedTime*0.5, location: touch)
-        }
-        .ignoresSafeArea()
-        .gesture(
-            DragGesture(minimumDistance: 0)
-                .onChanged { value in
-                    let translatedValue = CGPoint(x: (value.location.x/100), y: (value.location.y/100))
-                    self.touch = translatedValue
-                }
-        )
+        GlowingMarblingBlack(time: hud.elapsedTime, location: touch)
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { value in
+                        let translatedValue = CGPoint(x: (value.location.x/100), y: (value.location.y/100))
+                        self.touch = translatedValue
+                    }
+            )
     }
 }
 
@@ -577,12 +440,7 @@ struct ElectricFieldView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            ElectricField(time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        ElectricField(time: hud.elapsedTime)
     }
 }
 
@@ -593,15 +451,10 @@ struct ElectricFieldView: View {
 struct FBMLightningView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    var lightningColor = Color(red: 0.2, green: 0.3, blue: 0.8)
+    var lightningColor = Color(0.2, 0.3, 0.8)
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            FBMLightning(lightningColor: lightningColor, time: elapsedTime)
-        }
-        .ignoresSafeArea()
+        FBMLightning(lightningColor: lightningColor, time: hud.elapsedTime)
     }
 }
 
@@ -612,23 +465,16 @@ struct FBMLightningView: View {
 struct WetNeuralNetworkView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    var color = Color(red: 0.25, green: 0.5, blue: 1)
+    var color = Color(0.25, 0.5, 1)
     
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date + 700)
-            
-            WetNeuralNetwork(color: color, time: elapsedTime, location: touch)
-        }
-        .ignoresSafeArea()
-        .gesture(
-            DragGesture(minimumDistance: 0)
-                .onChanged { value in
-                    self.touch = value.location
-                }
-        )
+        WetNeuralNetwork(color: color, time: hud.elapsedTime, location: touch)
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { self.touch = $0.location }
+            )
     }
 }
 
@@ -643,12 +489,7 @@ struct Lightning01View: View {
     @State private var touch: CGPoint = .zero
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            Lightning01(lightningColor: lightningColor, time: elapsedTime, location: touch)
-        }
-        .ignoresSafeArea()
+            Lightning01(lightningColor: lightningColor, time: hud.elapsedTime, location: touch)
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onChanged { value in

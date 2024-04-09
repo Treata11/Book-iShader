@@ -37,20 +37,15 @@ struct AudioEclipseView: View {
         GeometryReader {
             let size = $0.size
             
-            TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
-                let elapsedTime = hud.startTime.distance(to: context.date)
-                
-                AudioEclipse(time: elapsedTime, fft: audioManager.muSpectrum)
-                    .overlay {
-                        Circle()
-                            .foregroundStyle(.thinMaterial)
-                            .preferredColorScheme(.dark)
-                            .frame(width: min(size.width, size.height) * 0.7)
-                            .blur(radius: 15)
-                            .shadow(radius: 15, x: 0, y: 0)
-                    }
-            }
-            .ignoresSafeArea()
+            AudioEclipse(time: hud.elapsedTime, fft: audioManager.muSpectrum)
+                .overlay {
+                    Circle()
+                        .foregroundStyle(.thinMaterial)
+                        .preferredColorScheme(.dark)
+                        .frame(width: min(size.width, size.height) * 0.7)
+                        .blur(radius: 15)
+                        .shadow(radius: 15, x: 0, y: 0)
+                }
         }
     }
 }
@@ -68,12 +63,7 @@ struct ShadesOfMusicView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            ShadesOfMusic(time: elapsedTime, fft: audioManager.muSpectrum)
-        }
-        .ignoresSafeArea()
+        ShadesOfMusic(time: hud.elapsedTime, fft: audioManager.muSpectrum)
     }
 }
 
@@ -90,12 +80,7 @@ struct SineSoundWavesView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.025, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            SineSoundWaves(time: elapsedTime, fft: audioManager.muSpectrum)
-        }
-        .ignoresSafeArea()
+        SineSoundWaves(time: hud.elapsedTime, fft: audioManager.muSpectrum)
     }
 }
 
@@ -112,12 +97,7 @@ struct GlowingSoundParticlesView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            GlowingSoundParticles(time: elapsedTime, fft: audioManager.muSpectrum)
-        }
-        .ignoresSafeArea()
+        GlowingSoundParticles(time: hud.elapsedTime, fft: audioManager.muSpectrum)
     }
 }
 
@@ -136,21 +116,15 @@ struct UniverseWithinView: View {
     @State private var touch = CGPoint.zero
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.035, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            UniverseWithin(
-                time: elapsedTime,
-                fft: audioManager.spectrum,
-                location: touch)
-        }
-        .ignoresSafeArea()
-        .gesture(
-            DragGesture(minimumDistance: 0)
-                .onChanged { value in
-                    self.touch = value.location
-                }
+        UniverseWithin(
+            time: hud.elapsedTime,
+            fft: audioManager.spectrum,
+            location: touch
         )
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { self.touch = $0.location }
+            )
     }
 }
 
@@ -167,12 +141,7 @@ struct GalaxyVisualsView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.0167, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            GalaxyVisuals(time: elapsedTime, fft: audioManager.muSpectrum)
-        }
-        .ignoresSafeArea()
+        GalaxyVisuals(time: hud.elapsedTime, fft: audioManager.muSpectrum)
     }
 }
 
@@ -196,7 +165,6 @@ struct RoundAudioSpecturmView: View {
             backgroundColor: backgroundColor,
             rayCount: rayCount
         )
-            .ignoresSafeArea()
 //            .aspectRatio(1, contentMode: .fit)
     }
 }
@@ -213,12 +181,7 @@ struct WavesRemixView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 0.02, paused: hud.paused)) { context in
-            let elapsedTime = hud.startTime.distance(to: context.date)
-            
-            WavesRemix(time: elapsedTime, fft: audioManager.muSpectrum)
-        }
-        .ignoresSafeArea()
+        WavesRemix(time: hud.elapsedTime, fft: audioManager.muSpectrum)
     }
 }
 
