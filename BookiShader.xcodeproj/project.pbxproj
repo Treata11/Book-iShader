@@ -27,6 +27,7 @@
 		614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B61712BBF22EC003A4935 /* LayerEffectViews.swift */; };
 		61920EC82BC2E4CE00989BB9 /* ShaderGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */; };
 		61A488D22BC2A5AA003BE4F2 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A488D12BC2A5AA003BE4F2 /* Gradients.swift */; };
+		61A761632BC5CC980034462D /* Extension+TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A761622BC5CC980034462D /* Extension+TimeInterval.swift */; };
 		61B7ABB02BC1DFC400437D33 /* DemoAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */; };
 		61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC3172BC0210A001FA0EA /* ArtShaders.swift */; };
 		61FFC31B2BC0213F001FA0EA /* ShaderHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */; };
@@ -49,6 +50,7 @@
 		614B61712BBF22EC003A4935 /* LayerEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerEffectViews.swift; sourceTree = "<group>"; };
 		61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderGrid.swift; sourceTree = "<group>"; };
 		61A488D12BC2A5AA003BE4F2 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
+		61A761622BC5CC980034462D /* Extension+TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TimeInterval.swift"; sourceTree = "<group>"; };
 		61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAnimation.swift; sourceTree = "<group>"; };
 		61FFC3172BC0210A001FA0EA /* ArtShaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtShaders.swift; sourceTree = "<group>"; };
 		61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderHud.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				61FFC31F2BC07773001FA0EA /* ViewExtension */,
+				61A761622BC5CC980034462D /* Extension+TimeInterval.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				614B61702BBF167D003A4935 /* DistortionEffectViews.swift in Sources */,
 				614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */,
 				611AAA082BBC54C700A1531B /* AudioVisualizerViews.swift in Sources */,
+				61A761632BC5CC980034462D /* Extension+TimeInterval.swift in Sources */,
 				61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */,
 				61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */,
 				612D27EA2BC41F530061D6FD /* HUD.swift in Sources */,

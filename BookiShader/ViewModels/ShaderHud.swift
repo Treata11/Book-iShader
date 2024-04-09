@@ -71,6 +71,7 @@ class ShaderHud {
 @Observable
 class ShaderManager {
     
+    /// The target `Frames Per Second`
     var fps: Float = 60
     
     /// The rate of the playback, `Playback Speed`
@@ -85,9 +86,7 @@ class ShaderManager {
     var paused = true {
         willSet {
             if !newValue {
-                if stopwatchTimer == nil {
-                    startTimer()
-                }
+                if stopwatchTimer == nil { startTimer() }
             } else {
                 pauseTimer()
             }
@@ -103,10 +102,10 @@ class ShaderManager {
     // MARK: - Instance Methods
     
     private func startTimer() {
-        self.stopwatchTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(1.0/fps), repeats: true, block: { [weak self] timer in
+        self.stopwatchTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(1.0/fps), repeats: true) { [weak self] timer in
             // Update the elapsed time
             self?.elapsedTime += timer.timeInterval * (self?.rate ?? .one).rawValue
-        })
+        }
     }
     
     func pauseTimer() {
@@ -123,7 +122,11 @@ class ShaderManager {
         }
     }
     
-    func toggleTimer() { self.paused.toggle() }
+    func seek(to time: TimeInterval) { self.elapsedTime = time }
+    
+    func fastForward(seconds: TimeInterval = 5) { self.elapsedTime += seconds }
+    
+    func rewind(seconds: TimeInterval = 5) { self.elapsedTime -= seconds }
     
     func formattedElapsedTime() -> String {
         // Format the elapsed time as a stopwatch time
@@ -138,23 +141,18 @@ class ShaderManager {
 
 enum PlaybackSpeed: Double, CaseIterable, Identifiable {
     case pointOne = 0.1
-    case pointTwo = 0.2
     case pointTwentyFive = 0.25
-    case pointThree = 0.3
     case pointFour = 0.4
     case pointFive = 0.5
-    case pointSix = 0.6
-    case pointSeven = 0.7
-    case pointEight = 0.8
+    case pointSevenFive = 0.75
     case pointNine = 0.9
     case one = 1.0
+    case onePointOne = 1.1
     case onePointTwoFive = 1.25
     case onePointFive = 1.5
     case onePointSevenFive = 1.75
     case two = 2.0
-    case twoPointTwoFive = 2.25
     case twoPointFive = 2.5
-    case twoPointSevenFive = 2.75
     case three = 3.0
 
     var id: Double { self.rawValue }
