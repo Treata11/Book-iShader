@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61138D722BBE07A20077AE71 /* ColorEffectViews.swift */; };
+		611621AA2BC6EB1400E48762 /* ShaderInputViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611621A92BC6EB1400E48762 /* ShaderInputViewBuilder.swift */; };
 		611AA9E82BBC2ED300A1531B /* BookiShaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611AA9E72BBC2ED300A1531B /* BookiShaderApp.swift */; };
 		611AA9EC2BBC2ED400A1531B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611AA9EB2BBC2ED400A1531B /* Assets.xcassets */; };
 		611AA9F02BBC2ED400A1531B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611AA9EF2BBC2ED400A1531B /* Preview Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		61138D722BBE07A20077AE71 /* ColorEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEffectViews.swift; sourceTree = "<group>"; };
+		611621A92BC6EB1400E48762 /* ShaderInputViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderInputViewBuilder.swift; sourceTree = "<group>"; };
 		611AA9E42BBC2ED300A1531B /* BookiShader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookiShader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		611AA9E72BBC2ED300A1531B /* BookiShaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookiShaderApp.swift; sourceTree = "<group>"; };
 		611AA9EB2BBC2ED400A1531B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		611621A82BC6EAF200E48762 /* ViewBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				611621A92BC6EB1400E48762 /* ShaderInputViewBuilder.swift */,
+			);
+			path = ViewBuilders;
+			sourceTree = "<group>";
+		};
 		611AA9DB2BBC2ED300A1531B = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,8 @@
 		61FFC31C2BC02492001FA0EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				611621A82BC6EAF200E48762 /* ViewBuilders */,
+				61FFC31D2BC024BB001FA0EA /* ShaderArt */,
 				61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */,
 				612D27E72BC4160F0061D6FD /* ShaderPage.swift */,
 				612D27E92BC41F530061D6FD /* HUD.swift */,
@@ -157,7 +169,6 @@
 				61138D722BBE07A20077AE71 /* ColorEffectViews.swift */,
 				614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */,
 				614B61712BBF22EC003A4935 /* LayerEffectViews.swift */,
-				61FFC31D2BC024BB001FA0EA /* ShaderArt */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				611621AA2BC6EB1400E48762 /* ShaderInputViewBuilder.swift in Sources */,
 				612D27E82BC4160F0061D6FD /* ShaderPage.swift in Sources */,
 				61920EC82BC2E4CE00989BB9 /* ShaderGrid.swift in Sources */,
 				61A488D22BC2A5AA003BE4F2 /* Gradients.swift in Sources */,

@@ -237,8 +237,75 @@ struct WritheView: View {
 struct CloudsView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
 
+    @State private var cloudScale: Float = 1.1
+    @State private var cloudAlpha: Float = 8
+    @State private var windSpeed: Float = 0.03
+    
     var body: some View {
-        Clouds(time: hud.elapsedTime)
+        VStack {
+            Clouds(time: hud.elapsedTime,
+                   cloudScale: cloudScale,
+                   cloudAlpha: cloudAlpha,
+                   windSpeed: windSpeed
+            )
+            .overlay(alignment: .topTrailing) {
+                Button(action: {
+                    showSettings.toggle()
+                }, label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.headline)
+                        .padding(5)
+                        .tint(.secondary)
+                })
+                .buttonBorderShape(.circle)
+                .buttonStyle(.borderless)
+            }
+        }
+        .sheet(isPresented: $showSettings) {
+            shaderInputViewBuilder(inputSettings: shaderInput, isPresented: $showSettings)
+        }
+    }
+    
+    @State private var showSettings = false
+    
+    var shaderInput: some View {
+        // Sliders
+        Group {
+            Slider(
+                value: $cloudScale,
+                in: 0.7...5
+            ) {
+                Text("Cloud Scale")
+            } minimumValueLabel: {
+                Text("0.7")
+            } maximumValueLabel: {
+                Text("5")
+            }
+            
+            Slider(
+                value: $cloudAlpha,
+                in: 1...10
+            ) {
+                Text("Cloud Alpha")
+            } minimumValueLabel: {
+                Text("1")
+            } maximumValueLabel: {
+                Text("10")
+            }
+            
+            Slider(
+                value: $windSpeed,
+                in: 0.01...0.09
+            ) {
+                Text("Wind Speed")
+            } minimumValueLabel: {
+                Text("0.01")
+            } maximumValueLabel: {
+                Text("0.09")
+            }
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 5)
     }
 }
 
