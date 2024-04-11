@@ -82,11 +82,50 @@ struct BeamDropletView: View {
 struct SineWavesView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    var relativeColor = Color(red: 0.2, green: 0.2, blue: 0.3)
-    var waveCount = 7
+    @State private var relativeColor = Color(0.2, 0.2, 0.3)
+    @State private var waveCount = 7
 
     var body: some View {
         SineWaves(relativeColor: relativeColor, time: hud.elapsedTime, waveCount: waveCount)
+        // The input settings
+            .overlay(alignment: .topTrailing) {
+                Button(action: {
+                    showSettings.toggle()
+                }, label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.headline)
+                        .padding(5)
+                        .tint(.secondary)
+                })
+                .buttonBorderShape(.circle)
+                .buttonStyle(.borderless)
+                .tint(.accentColor)
+            }
+            .sheet(isPresented: $showSettings) {
+                shaderInputViewBuilder(inputSettings: shaderInput, isPresented: $showSettings)
+        }
+    }
+        
+    @State private var showSettings = false
+    let range: ClosedRange<Int> = 3...13
+    
+    var shaderInput: some View {
+        Group {
+            ColorPicker("Relative Wave Color", selection: $relativeColor)
+            
+            Picker("Count of Waves", selection: $waveCount) {
+                ForEach(range, id: \.self) { timeIncrement in
+                    HStack {
+                        // Forces the text in the Picker to be right-aligned
+                        Spacer()
+                        Text("\(timeIncrement)")
+                            .multilineTextAlignment(.trailing)
+                    }
+                }
+            }
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 5)
     }
 }
 
@@ -108,11 +147,35 @@ struct PortalView: View {
 
 struct NeonRugView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    var neonEffect = true
 
     var body: some View {
         NeonRug(time: hud.elapsedTime, neonEffect: neonEffect)
+        // The input settings
+            .overlay(alignment: .topTrailing) {
+                Button(action: {
+                    showSettings.toggle()
+                }, label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.headline)
+                        .padding(5)
+                        .tint(.secondary)
+                })
+                .buttonBorderShape(.circle)
+                .buttonStyle(.borderless)
+                .tint(.accentColor)
+            }
+            .sheet(isPresented: $showSettings) {
+                shaderInputViewBuilder(inputSettings: shaderInput, isPresented: $showSettings)
+        }
+    }
+    
+    @State private var showSettings = false
+    @State private var neonEffect = true
+    
+    var shaderInput: some View {
+        Toggle("Neon Effect", isOn: $neonEffect)
+            .padding(.horizontal)
+            .padding(.vertical, 5)
     }
 }
 
@@ -173,12 +236,36 @@ struct SpiralRidersView: View {
 
 struct BlackHoleDawnView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    /// Means that the result color in the shader, might not precisely match the given color.
-    var relativeColor = Color(1, 0.025, 0)
 
     var body: some View {
         BlackHoleDawn(relativeColor: relativeColor, time: hud.elapsedTime)
+        // The input settings
+            .overlay(alignment: .topTrailing) {
+                Button(action: {
+                    showSettings.toggle()
+                }, label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.headline)
+                        .padding(5)
+                        .tint(.secondary)
+                })
+                .buttonBorderShape(.circle)
+                .buttonStyle(.borderless)
+                .tint(.accentColor)
+            }
+            .sheet(isPresented: $showSettings) {
+                shaderInputViewBuilder(inputSettings: shaderInput, isPresented: $showSettings)
+        }
+    }
+    
+    @State private var showSettings = false
+    /// Means that the result color in the shader, might not precisely match the given color.
+    @State private var relativeColor = Color(1, 0.025, 0)
+    
+    var shaderInput: some View {
+        ColorPicker("Relative Color", selection: $relativeColor)
+            .padding(.horizontal)
+            .padding(.vertical, 5)
     }
 }
 
@@ -242,24 +329,23 @@ struct CloudsView: View {
     @State private var windSpeed: Float = 0.03
     
     var body: some View {
-        VStack {
-            Clouds(time: hud.elapsedTime,
-                   cloudScale: cloudScale,
-                   cloudAlpha: cloudAlpha,
-                   windSpeed: windSpeed
-            )
-            .overlay(alignment: .topTrailing) {
-                Button(action: {
-                    showSettings.toggle()
-                }, label: {
-                    Image(systemName: "slider.horizontal.3")
-                        .font(.headline)
-                        .padding(5)
-                        .tint(.secondary)
-                })
-                .buttonBorderShape(.circle)
-                .buttonStyle(.borderless)
-            }
+        Clouds(time: hud.elapsedTime,
+               cloudScale: cloudScale,
+               cloudAlpha: cloudAlpha,
+               windSpeed: windSpeed
+        )
+        .overlay(alignment: .topTrailing) {
+            Button(action: {
+                showSettings.toggle()
+            }, label: {
+                Image(systemName: "slider.horizontal.3")
+                    .font(.headline)
+                    .padding(5)
+                    .tint(.secondary)
+            })
+            .buttonBorderShape(.circle)
+            .buttonStyle(.borderless)
+            .tint(.accentColor)
         }
         .sheet(isPresented: $showSettings) {
             shaderInputViewBuilder(inputSettings: shaderInput, isPresented: $showSettings)
@@ -352,12 +438,40 @@ struct LensFlareView: View {
 
 struct IrisView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    var irisColor = Color(red: 0, green: 0.3, blue: 0.4)
-    var corneaEdgeHue: Color = .init(red: 0.9, green: 0.6, blue: 0.2)
 
     var body: some View {
         Iris(irisColor: irisColor, time: hud.elapsedTime, corneaEdgeHue: corneaEdgeHue)
+        // The input settings
+            .overlay(alignment: .topTrailing) {
+                Button(action: {
+                    showSettings.toggle()
+                }, label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.headline)
+                        .padding(5)
+                        .tint(.secondary)
+                })
+                .buttonBorderShape(.circle)
+                .buttonStyle(.borderless)
+                .tint(.accentColor)
+            }
+            .sheet(isPresented: $showSettings) {
+                shaderInputViewBuilder(inputSettings: shaderInput, isPresented: $showSettings)
+        }
+    }
+    
+    @State private var showSettings = false
+    
+    @State private var irisColor = Color(0, 0.3, 0.4)
+    @State private var corneaEdgeHue: Color = .init(0.9, 0.6, 0.2)
+    
+    var shaderInput: some View {
+        Group {
+            ColorPicker("Iris Color", selection: $irisColor)
+            ColorPicker("Cornea Edge Hue", selection: $corneaEdgeHue)
+        }
+            .padding(.horizontal)
+            .padding(.vertical, 5)
     }
 }
 
@@ -517,11 +631,36 @@ struct ElectricFieldView: View {
 
 struct FBMLightningView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
-    
-    var lightningColor = Color(0.2, 0.3, 0.8)
 
     var body: some View {
         FBMLightning(lightningColor: lightningColor, time: hud.elapsedTime)
+        // The input settings
+            .overlay(alignment: .topTrailing) {
+                Button(action: {
+                    showSettings.toggle()
+                }, label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.headline)
+                        .padding(5)
+                        .tint(.secondary)
+                })
+                .buttonBorderShape(.circle)
+                .buttonStyle(.borderless)
+                .tint(.accentColor)
+            }
+            .sheet(isPresented: $showSettings) {
+                shaderInputViewBuilder(inputSettings: shaderInput, isPresented: $showSettings)
+        }
+    }
+    
+    @State private var showSettings = false
+    
+    @State private var lightningColor = Color(0.2, 0.3, 0.8)
+    
+    var shaderInput: some View {
+        ColorPicker("Lightning Color", selection: $lightningColor)
+            .padding(.horizontal)
+            .padding(.vertical, 5)
     }
 }
 
@@ -532,8 +671,6 @@ struct FBMLightningView: View {
 struct WetNeuralNetworkView: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    var color = Color(0.25, 0.5, 1)
-    
     @State private var touch: CGPoint = .zero
 
     var body: some View {
@@ -542,6 +679,33 @@ struct WetNeuralNetworkView: View {
                 DragGesture(minimumDistance: 0)
                     .onChanged { self.touch = $0.location }
             )
+        // The input settings
+            .overlay(alignment: .topTrailing) {
+                Button(action: {
+                    showSettings.toggle()
+                }, label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.headline)
+                        .padding(5)
+                        .tint(.secondary)
+                })
+                .buttonBorderShape(.circle)
+                .buttonStyle(.borderless)
+                .tint(.accentColor)
+            }
+            .sheet(isPresented: $showSettings) {
+                shaderInputViewBuilder(inputSettings: shaderInput, isPresented: $showSettings)
+        }
+    }
+    
+    @State private var showSettings = false
+    
+    @State private var color = Color(0.25, 0.5, 1)
+    
+    var shaderInput: some View {
+        ColorPicker("Color", selection: $color)
+            .padding(.horizontal)
+            .padding(.vertical, 5)
     }
 }
 
@@ -552,7 +716,6 @@ struct WetNeuralNetworkView: View {
 struct Lightning01View: View {
     @Environment(ShaderHud.self) var hud: ShaderHud
     
-    var lightningColor: Color = .init(red: 1.2, green: 0.2, blue: 0.3)
     @State private var touch: CGPoint = .zero
 
     var body: some View {
@@ -564,6 +727,33 @@ struct Lightning01View: View {
                     self.touch = location
                 }
         )
+        // The input settings
+            .overlay(alignment: .topTrailing) {
+                Button(action: {
+                    showSettings.toggle()
+                }, label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.headline)
+                        .padding(5)
+                        .tint(.secondary)
+                })
+                .buttonBorderShape(.circle)
+                .buttonStyle(.borderless)
+                .tint(.accentColor)
+            }
+            .sheet(isPresented: $showSettings) {
+                shaderInputViewBuilder(inputSettings: shaderInput, isPresented: $showSettings)
+        }
+    }
+    
+    @State private var showSettings = false
+    
+    @State private var lightningColor: Color = .init(1.2, 0.2, 0.3)
+    
+    var shaderInput: some View {
+        ColorPicker("Lightning Color", selection: $lightningColor)
+            .padding(.horizontal)
+            .padding(.vertical, 5)
     }
 }
 

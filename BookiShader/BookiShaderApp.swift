@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct BookiShaderApp: App {
+    @Bindable private var shaderHud = ShaderHud()
+    
     var body: some Scene {
         WindowGroup {
             ArtShaders()
+                .environment(shaderHud)
         }
     }
 }

@@ -42,15 +42,16 @@ struct HUD: View {
             })
             
             Spacer()
-            
-            // Needs a seperate timer in `ShaderHud` which is inconvenient
-            Text("TODO: Elapsed Time")
+
+            // TODO: Fixed position for each digit
+            Text(hud.elapsedTime.truncated(toDecimalPlaces: 2).description)
         }
         .padding(.horizontal, 7.5)
         .padding(.vertical, 2.5)
-        .background {
-            Color(colorScheme == .light ? .lightGray : .darkGray)
-        }
+        
+//        .background {
+//            Color(colorScheme == .light ? .lightGray : .darkGray)
+//        }
     }
 }
 

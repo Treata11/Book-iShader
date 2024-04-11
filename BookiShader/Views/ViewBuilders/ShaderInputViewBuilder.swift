@@ -16,8 +16,10 @@ func shaderInputViewBuilder(
     inputSettings view: some View,
     isPresented: Binding<Bool>
 ) -> some View {
-    NavigationStack {
+    return NavigationStack {
         ScrollView(.vertical) {
+            HUD()
+            
             view
         }
         .padding()
@@ -56,4 +58,4 @@ private struct ShaderInputViewBuilder_Preview: View {
     }
 }
 
-#Preview("Shader Input ViewBuilder") { ShaderInputViewBuilder_Preview() }
+#Preview { ShaderInputViewBuilder_Preview() }
