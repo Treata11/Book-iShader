@@ -10,6 +10,7 @@
 */
 
 #if os(iOS) || os(macOS)
+
 import CBass
 import Foundation
 import Observation
@@ -71,7 +72,7 @@ let accidentalNotes: [Bool] = [ false, true, false, true, false, false, true, fa
  timer.invalidate()   This method is the only way to remove a timer from an RunLoop object. The RunLoop object removes its strong reference to the timer, either just before the invalidate() method returns or at some later point.  If it was configured with target and user info objects, the receiver removes its strong references to those objects as well.  You must send this message from the thread on which the timer was installed. If you send this message from another thread, the input source associated with the timer may not be removed from its run loop, which could prevent the thread from exiting properly.
  */
 @Observable
-public class BassAudioEngine {
+class BassAudioEngine {
     /// This singleton instantiates the BassAudioEngine class and runs setupAudio()
     static let shared = BassAudioEngine()
     
@@ -327,4 +328,5 @@ func getOnlyPeaks() -> Bool {
     }
     return onlyPeaks
 }
+
 #endif

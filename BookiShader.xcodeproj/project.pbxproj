@@ -29,6 +29,7 @@
 		6149E95C2BC837C7009ECD83 /* NoteProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9582BC837C7009ECD83 /* NoteProcessing.swift */; };
 		6149E95D2BC837C7009ECD83 /* PeaksSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9592BC837C7009ECD83 /* PeaksSorter.swift */; };
 		6149E9602BC83813009ECD83 /* CBass in Frameworks */ = {isa = PBXBuildFile; productRef = 6149E95F2BC83813009ECD83 /* CBass */; };
+		6149E9622BC83994009ECD83 /* AudioVisualizers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9612BC83994009ECD83 /* AudioVisualizers.swift */; };
 		614B61702BBF167D003A4935 /* DistortionEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */; };
 		614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B61712BBF22EC003A4935 /* LayerEffectViews.swift */; };
 		61920EC82BC2E4CE00989BB9 /* ShaderGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */; };
@@ -57,6 +58,7 @@
 		6149E9572BC837C7009ECD83 /* SpectralEnhancer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectralEnhancer.swift; sourceTree = "<group>"; };
 		6149E9582BC837C7009ECD83 /* NoteProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteProcessing.swift; sourceTree = "<group>"; };
 		6149E9592BC837C7009ECD83 /* PeaksSorter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeaksSorter.swift; sourceTree = "<group>"; };
+		6149E9612BC83994009ECD83 /* AudioVisualizers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizers.swift; sourceTree = "<group>"; };
 		614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionEffectViews.swift; sourceTree = "<group>"; };
 		614B61712BBF22EC003A4935 /* LayerEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerEffectViews.swift; sourceTree = "<group>"; };
 		61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderGrid.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				6149E9542BC837C7009ECD83 /* AudioProcessing */,
 				611AAA072BBC54C700A1531B /* AudioVisualizerViews.swift */,
+				6149E9612BC83994009ECD83 /* AudioVisualizers.swift */,
 			);
 			path = AudioVisualizer;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */,
 				61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */,
 				612D27EA2BC41F530061D6FD /* HUD.swift in Sources */,
+				6149E9622BC83994009ECD83 /* AudioVisualizers.swift in Sources */,
 				6149E95A2BC837C7009ECD83 /* BassAudioEngine.swift in Sources */,
 				61FFC3212BC07851001FA0EA /* ViewUtilities.swift in Sources */,
 				61B7ABB02BC1DFC400437D33 /* DemoAnimation.swift in Sources */,
