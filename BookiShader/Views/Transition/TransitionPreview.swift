@@ -57,23 +57,3 @@ struct TransitionPreview: View {
             .aspectRatio(4/3, contentMode: .fit)
     }
 }
-
-// MARK: - Previews
-
-#Preview("Circle") { TransitionPreview(transition: .circles()) }
-
-#Preview("swirl") { TransitionPreview(transition: .swirl()) }
-
-#Preview("Genie") { TransitionPreview(transition: .genie()) }
-
-#Preview("Wind") { TransitionPreview(transition: .wind()) }
-
-#Preview("radial") { TransitionPreview(transition: .radial) }
-
-#Preview("Crosswarp") { TransitionPreview(transition: .crosswarp(rightToLeft: true), duration: 3) }
-
-#Preview("Dreamy") { TransitionPreview(transition: .dreamy, duration: 3) }
-
-#Preview("Window Blinds") { TransitionPreview(transition: .windowBlinds(count: 66), duration: 3) }
-
-#Preview("Morph") { TransitionPreview(transition: .morph(strength: 0.1), duration: 3) }

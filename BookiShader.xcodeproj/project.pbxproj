@@ -36,6 +36,7 @@
 		61A488D22BC2A5AA003BE4F2 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A488D12BC2A5AA003BE4F2 /* Gradients.swift */; };
 		61A761632BC5CC980034462D /* Extension+TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A761622BC5CC980034462D /* Extension+TimeInterval.swift */; };
 		61B7ABB02BC1DFC400437D33 /* DemoAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */; };
+		61DD48CF2BD41BEA005632DE /* TransitionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD48CE2BD41BEA005632DE /* TransitionViews.swift */; };
 		61E697122BD25AF500827B8E /* TransitionPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E697112BD25AF500827B8E /* TransitionPreview.swift */; };
 		61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC3172BC0210A001FA0EA /* ArtShaders.swift */; };
 		61FFC31B2BC0213F001FA0EA /* ShaderHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */; };
@@ -66,6 +67,7 @@
 		61A488D12BC2A5AA003BE4F2 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		61A761622BC5CC980034462D /* Extension+TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TimeInterval.swift"; sourceTree = "<group>"; };
 		61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAnimation.swift; sourceTree = "<group>"; };
+		61DD48CE2BD41BEA005632DE /* TransitionViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViews.swift; sourceTree = "<group>"; };
 		61E697112BD25AF500827B8E /* TransitionPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPreview.swift; sourceTree = "<group>"; };
 		61FFC3172BC0210A001FA0EA /* ArtShaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtShaders.swift; sourceTree = "<group>"; };
 		61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderHud.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		61E697102BD25A9100827B8E /* Transition */ = {
 			isa = PBXGroup;
 			children = (
+				61DD48CE2BD41BEA005632DE /* TransitionViews.swift */,
 				61E697112BD25AF500827B8E /* TransitionPreview.swift */,
 			);
 			path = Transition;
@@ -359,6 +362,7 @@
 				6149E95A2BC837C7009ECD83 /* BassAudioEngine.swift in Sources */,
 				61FFC3212BC07851001FA0EA /* ViewUtilities.swift in Sources */,
 				61B7ABB02BC1DFC400437D33 /* DemoAnimation.swift in Sources */,
+				61DD48CF2BD41BEA005632DE /* TransitionViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
