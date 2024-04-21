@@ -194,7 +194,7 @@ struct CrosswarpTransition: View {
 
 // MARK: - Dreamy
 
-#Preview("Dreamy") { TransitionPreview(transition: .dreamy, duration: 3) }
+#Preview("Dreamy") { TransitionPreview(transition: .dreamy) }
 
 // MARK: - Window Blinds
 
