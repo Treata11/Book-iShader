@@ -16,16 +16,18 @@ class TransitionManager {
     /// The duration of the transition
     @ObservationIgnored var duration: TimeInterval = 1.618
     /// The rest duration between the transitions
-    @ObservationIgnored var restDuration: TimeInterval = (1.618 + .ulpOfOne) * 2
+    @ObservationIgnored var restDuration: TimeInterval = 1.618 * 1.5
     
-    init(duration: TimeInterval = 1.618, paused: Bool = true, restDuration: TimeInterval = (1.618 + .ulpOfOne) * 2) {
+    init(duration: TimeInterval = 1.618, paused: Bool = true, restDuration: TimeInterval = 1.618 * 1.5) {
         self.duration = duration
         self.paused = paused
         
-        // The restDuration should never be less than the double of `duration`
-        // or the transitions would stop working on the second attempt
-        if restDuration < self.duration {
-            self.restDuration = (self.duration + .ulpOfOne) * 2
+        // The restDuration should always be atleast 5_10% longer than the transitionDuration
+        // or the transitions would stop working
+        let smallPause = self.duration * 1.1
+        if restDuration < smallPause {
+            self.restDuration = smallPause
+            print("TransitionManager; Adjusted restDuration")
         }
     }
     
@@ -49,13 +51,13 @@ class TransitionManager {
     
     // MARK: - Instance Methods
     
-    func startTimer() {
+    private func startTimer() {
         self.automationTimer = Timer.scheduledTimer(withTimeInterval: restDuration, repeats: true) { [weak self] timer in
             self?.elapsedTime += timer.timeInterval
         }
     }
     
-    func pauseTimer() {
+    private func pauseTimer() {
         self.automationTimer?.invalidate()
         automationTimer = nil
     }
