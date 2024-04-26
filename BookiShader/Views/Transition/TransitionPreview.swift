@@ -11,6 +11,11 @@
 import Transition
 import SwiftUI
 
+// TODO: New File
+let imageResources: [ImageResource] = [
+    .darakehTehran, .pufferFishShader, .road59Chalus, .mountDamavand
+]
+
 // !!!: Currently the most suitable devices to view this are macOS & visionOS
 // No onHovering exists in iOS & tvOS
 
@@ -40,6 +45,8 @@ struct TransitionPreview: View {
             self.restDuration = smallPause
             print("TransitionManager; Adjusted restDuration")
         }
+        
+        imageRandomizer()
     }
     
     /// Whether we're showing the first view or the second view.
@@ -97,16 +104,36 @@ struct TransitionPreview: View {
         }
     }
     
+    private var firstImage: ImageResource = .road59Chalus
+    
     var firstView: some View {
-        Image(.road59Chalus)
+        Image(firstImage)
             .resizable()
             .aspectRatio(4/3, contentMode: .fit)
     }
     
+    private var secondImage: ImageResource = .mountDamavand
+    
     var secondView: some View {
-        Image(.darakehTehran)
+        Image(secondImage)
             .resizable()
             .aspectRatio(4/3, contentMode: .fit)
+    }
+    
+    // MARK: - Instance methods
+    
+    /// Image Randomizer
+    private mutating func imageRandomizer() {
+        var images = imageResources
+        // removing PufferFish Image
+        images.remove(at: images.firstIndex(of: .pufferFishShader)!)
+        
+        let randomImage = images.randomElement()!
+        // removing the selected random image
+        images.remove(at: images.firstIndex(of: randomImage)!)
+        
+        self.firstImage = randomImage
+        self.secondImage = images.randomElement()!
     }
 }
 
