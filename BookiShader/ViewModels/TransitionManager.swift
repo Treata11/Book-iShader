@@ -51,7 +51,7 @@ class TransitionManager {
     
     // MARK: - Instance Methods
     
-    private func startTimer() {
+    func startTimer() {
         self.automationTimer = Timer.scheduledTimer(withTimeInterval: restDuration, repeats: true) { [weak self] timer in
             self?.elapsedTime += timer.timeInterval
         }

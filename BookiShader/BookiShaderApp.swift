@@ -9,16 +9,12 @@ import SwiftUI
 
 @main
 struct BookiShaderApp: App {
-    @Bindable private var shaderHud = ShaderHud()
-    @Bindable private var audioManager = BassAudioEngine(filePath: Bundle.musicPath, fps: 60)
-    
     var body: some Scene {
         WindowGroup {
 //            ArtShaders()
 //            AudioVisualizers()
-            GridLoopOfShaders()
-                .environment(shaderHud)
-                .environment(audioManager)
+            
+            Transitions()
         }
     }
 }

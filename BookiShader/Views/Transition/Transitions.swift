@@ -11,16 +11,10 @@
 import SwiftUI
 
 struct Transitions: View {
-    @Bindable private var manager = TransitionManager()
-    
     var body: some View {
         NavigationStack {
             ShaderGrid(contents: transitionViews)
-                .onHover { hovering in
-                    manager.paused = !hovering
-                }
         }
-        .environment(manager)
     }
 }
 

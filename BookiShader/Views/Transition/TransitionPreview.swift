@@ -12,14 +12,12 @@ import Transition
 import SwiftUI
 
 struct TransitionPreview: View {
-    @Environment(TransitionManager.self) private var manager
+    @Bindable var manager = TransitionManager()
     
     /// The transition which is called from a shader function
     var transition: AnyTransition
     
-    init(transition: AnyTransition) {
-        self.transition = transition
-    }
+    init(transition: AnyTransition) { self.transition = transition }
     
     /// Whether we're showing the first view or the second view.
     @State private var showingFirstView = true
@@ -35,12 +33,30 @@ struct TransitionPreview: View {
                     .transition(transition)
             }
         }
+        // Triggering the start of transition on macOS & visionOS
+        .onHover { hovering in
+            print("TransitionPreview; hovering: \(hovering)")
+            triggerTimer(!hovering)
+        }
+        .contextMenu {
+            // TODO: STH more useful, maybe name of the transition ...
+            Text("Preview")
+                .onAppear { triggerTimer(true) }
+                .onDisappear { triggerTimer(false) }
+        }
         // automatically transitions back & forth between the views with a slight rest
         .onChange(of: manager.elapsedTime) {
             // Handle the transition anmation here
             withAnimation(.easeIn(duration: manager.duration)) {
                 showingFirstView.toggle()
             }
+        }
+        .onTapGesture {
+            print(manager.elapsedTime)
+        }
+        // Debug
+        .onChange(of: manager.paused) {
+            print("TransitionPreview; manager isPaused: \(manager.paused)")
         }
     }
     
@@ -55,9 +71,20 @@ struct TransitionPreview: View {
             .resizable()
             .aspectRatio(4/3, contentMode: .fit)
     }
+    
+    // MARK: VM Intents
+    
+    func triggerTimer(_ value: Bool) {
+        print("TransitionPreview; triggerTimer()")
+        manager.paused = value
+    }
 }
 
-#Preview("TransitionPreview") {
-    TransitionPreview(transition: .dreamy)
-        .environment(TransitionManager())
+#Preview("Transition Preview") { TransitionPreview(transition: .dreamy) }
+
+#Preview("Transitions") {
+    Grid() {
+        TransitionPreview(transition: .swirl())
+        TransitionPreview(transition: .crosswarp())
+    }
 }
