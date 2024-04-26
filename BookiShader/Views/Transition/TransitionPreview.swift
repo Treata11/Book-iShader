@@ -25,23 +25,13 @@ struct TransitionPreview: View {
     @State private var startTime = Date.now
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 1.618, paused: paused)) { context in
+        TimelineView(.animation(minimumInterval: 1.618 * 1.05, paused: paused)) { context in
             let elapsedTime = startTime.distance(to: context.date)
             
-            // MARK: Transition Group
-            Group {
-                if showingFirstView {
-                    firstView
-                        .transition(transition)
-                    
-                } else {
-                    secondView
-                        .transition(transition)
-                }
-            }
+            transitionViews
             // automatically transitions back & forth between the views with a slight rest
             .onChange(of: elapsedTime) {
-                withAnimation(.linear(duration: 1.3)) {
+                withAnimation(.linear(duration: 1.618 / 1.05)) {
                     showingFirstView.toggle()
                 }
             }
@@ -51,8 +41,9 @@ struct TransitionPreview: View {
             print("TransitionPreview; hovering: \(hovering)")
             paused = !hovering
         }
+        // Intended for devices that there's no hovering action (iOS, tvOS)
         // It's full of bugs ...
-        .contextMenu {
+        .contextMenu(menuItems: {
             // TODO: STH more useful, maybe name of the transition ...
             Text("Preview")
             
@@ -64,6 +55,21 @@ struct TransitionPreview: View {
             .font(.title)
             .buttonBorderShape(.circle)
             .padding()
+        })
+    }
+    
+    // MARK: Images
+    
+    var transitionViews: some View {
+        Group {
+            if showingFirstView {
+                firstView
+                    .transition(transition)
+                
+            } else {
+                secondView
+                    .transition(transition)
+            }
         }
     }
     
