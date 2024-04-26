@@ -12,8 +12,6 @@ import Transition
 import SwiftUI
 
 struct TransitionPreview: View {
-    @Bindable var manager = TransitionManager()
-    
     /// The transition which is called from a shader function
     var transition: AnyTransition
     
@@ -22,41 +20,50 @@ struct TransitionPreview: View {
     /// Whether we're showing the first view or the second view.
     @State private var showingFirstView = true
     
+    // Timeline related
+    @State private var paused = true
+    @State private var startTime = Date.now
+    
     var body: some View {
-        Group {
-            if showingFirstView {
-                firstView
-                    .transition(transition)
-
-            } else {
-                secondView
-                    .transition(transition)
+        TimelineView(.animation(minimumInterval: 1.618, paused: paused)) { context in
+            let elapsedTime = startTime.distance(to: context.date)
+            
+            // MARK: Transition Group
+            Group {
+                if showingFirstView {
+                    firstView
+                        .transition(transition)
+                    
+                } else {
+                    secondView
+                        .transition(transition)
+                }
+            }
+            // automatically transitions back & forth between the views with a slight rest
+            .onChange(of: elapsedTime) {
+                withAnimation(.linear(duration: 1.3)) {
+                    showingFirstView.toggle()
+                }
             }
         }
         // Triggering the start of transition on macOS & visionOS
         .onHover { hovering in
             print("TransitionPreview; hovering: \(hovering)")
-            triggerTimer(!hovering)
+            paused = !hovering
         }
+        // It's full of bugs ...
         .contextMenu {
             // TODO: STH more useful, maybe name of the transition ...
             Text("Preview")
-                .onAppear { triggerTimer(true) }
-                .onDisappear { triggerTimer(false) }
-        }
-        // automatically transitions back & forth between the views with a slight rest
-        .onChange(of: manager.elapsedTime) {
-            // Handle the transition anmation here
-            withAnimation(.easeIn(duration: manager.duration)) {
-                showingFirstView.toggle()
-            }
-        }
-        .onTapGesture {
-            print(manager.elapsedTime)
-        }
-        // Debug
-        .onChange(of: manager.paused) {
-            print("TransitionPreview; manager isPaused: \(manager.paused)")
+            
+            Button(action: {
+                paused.toggle()
+            }, label: {
+                paused ? Image(systemName: "play.fill") : Image(systemName: "pause.fill")
+            })
+            .font(.title)
+            .buttonBorderShape(.circle)
+            .padding()
         }
     }
     
@@ -70,13 +77,6 @@ struct TransitionPreview: View {
         Image(.darakehTehran)
             .resizable()
             .aspectRatio(4/3, contentMode: .fit)
-    }
-    
-    // MARK: VM Intents
-    
-    func triggerTimer(_ value: Bool) {
-        print("TransitionPreview; triggerTimer()")
-        manager.paused = value
     }
 }
 
