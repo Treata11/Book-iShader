@@ -36,7 +36,6 @@
 		61920EC82BC2E4CE00989BB9 /* ShaderGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */; };
 		61A488D22BC2A5AA003BE4F2 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A488D12BC2A5AA003BE4F2 /* Gradients.swift */; };
 		61A761632BC5CC980034462D /* Extension+TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A761622BC5CC980034462D /* Extension+TimeInterval.swift */; };
-		61ACAF052BD5555100D5588F /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ACAF042BD5555100D5588F /* TransitionManager.swift */; };
 		61B7ABB02BC1DFC400437D33 /* DemoAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */; };
 		61DD48CF2BD41BEA005632DE /* TransitionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD48CE2BD41BEA005632DE /* TransitionViews.swift */; };
 		61E697122BD25AF500827B8E /* TransitionPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E697112BD25AF500827B8E /* TransitionPreview.swift */; };
@@ -69,7 +68,6 @@
 		61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderGrid.swift; sourceTree = "<group>"; };
 		61A488D12BC2A5AA003BE4F2 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		61A761622BC5CC980034462D /* Extension+TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TimeInterval.swift"; sourceTree = "<group>"; };
-		61ACAF042BD5555100D5588F /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAnimation.swift; sourceTree = "<group>"; };
 		61DD48CE2BD41BEA005632DE /* TransitionViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViews.swift; sourceTree = "<group>"; };
 		61E697112BD25AF500827B8E /* TransitionPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPreview.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				61FFC31A2BC0213F001FA0EA /* ShaderHud.swift */,
-				61ACAF042BD5555100D5588F /* TransitionManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -362,7 +359,6 @@
 				61A761632BC5CC980034462D /* Extension+TimeInterval.swift in Sources */,
 				6149E95C2BC837C7009ECD83 /* NoteProcessing.swift in Sources */,
 				61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */,
-				61ACAF052BD5555100D5588F /* TransitionManager.swift in Sources */,
 				61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */,
 				612D27EA2BC41F530061D6FD /* HUD.swift in Sources */,
 				617C3E432BD4454800DDC65D /* Transitions.swift in Sources */,

@@ -11,11 +11,36 @@
 import Transition
 import SwiftUI
 
+// !!!: Currently the most suitable devices to view this are macOS & visionOS
+// No onHovering exists in iOS & tvOS
+
 struct TransitionPreview: View {
     /// The transition which is called from a shader function
     var transition: AnyTransition
     
-    init(transition: AnyTransition) { self.transition = transition }
+    /// The duration of the transition
+    var duration: TimeInterval = 1.618 / 1.03
+    /// The rest duration between the transitions
+    var restDuration: TimeInterval = 1.618 * 1.03
+    
+    init(
+        transition: AnyTransition,
+        transitionDuration: TimeInterval = 1.618 / 1.03,
+        restDuration: TimeInterval = 1.618 * 1.03
+    ) {
+        self.transition = transition
+        
+        self.duration = transitionDuration
+        self.restDuration = restDuration
+        
+        // The restDuration should always be atleast 5_10% longer than the transitionDuration
+        // or the transitions would stop working
+        let smallPause = self.duration * 1.05
+        if restDuration < smallPause {
+            self.restDuration = smallPause
+            print("TransitionManager; Adjusted restDuration")
+        }
+    }
     
     /// Whether we're showing the first view or the second view.
     @State private var showingFirstView = true
@@ -25,20 +50,19 @@ struct TransitionPreview: View {
     @State private var startTime = Date.now
     
     var body: some View {
-        TimelineView(.animation(minimumInterval: 1.618 * 1.05, paused: paused)) { context in
+        TimelineView(.animation(minimumInterval: restDuration, paused: paused)) { context in
             let elapsedTime = startTime.distance(to: context.date)
             
             transitionViews
             // automatically transitions back & forth between the views with a slight rest
             .onChange(of: elapsedTime) {
-                withAnimation(.linear(duration: 1.618 / 1.05)) {
+                withAnimation(.linear(duration: duration)) {
                     showingFirstView.toggle()
                 }
             }
         }
         // Triggering the start of transition on macOS & visionOS
         .onHover { hovering in
-            print("TransitionPreview; hovering: \(hovering)")
             paused = !hovering
         }
         // Intended for devices that there's no hovering action (iOS, tvOS)
