@@ -17,23 +17,23 @@
 		611AAA0C2BBC5F9000A1531B /* Be Khod Ay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */; };
 		612D27E82BC4160F0061D6FD /* ShaderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D27E72BC4160F0061D6FD /* ShaderPage.swift */; };
 		612D27EA2BC41F530061D6FD /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D27E92BC41F530061D6FD /* HUD.swift */; };
-		612D27ED2BC46D770061D6FD /* AudioVisualizer in Frameworks */ = {isa = PBXBuildFile; productRef = 612D27EC2BC46D770061D6FD /* AudioVisualizer */; };
-		612D27EF2BC46D770061D6FD /* ColorEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 612D27EE2BC46D770061D6FD /* ColorEffect */; };
-		612D27F12BC46D770061D6FD /* DistortionEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 612D27F02BC46D770061D6FD /* DistortionEffect */; };
-		612D27F32BC46D770061D6FD /* LayerEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 612D27F22BC46D770061D6FD /* LayerEffect */; };
-		612D27F52BC46D770061D6FD /* ShaderArt in Frameworks */ = {isa = PBXBuildFile; productRef = 612D27F42BC46D770061D6FD /* ShaderArt */; };
-		612D27F72BC46D770061D6FD /* Transition in Frameworks */ = {isa = PBXBuildFile; productRef = 612D27F62BC46D770061D6FD /* Transition */; };
-		612D27F92BC46D770061D6FD /* iShader in Frameworks */ = {isa = PBXBuildFile; productRef = 612D27F82BC46D770061D6FD /* iShader */; };
 		6149E95A2BC837C7009ECD83 /* BassAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9562BC837C7009ECD83 /* BassAudioEngine.swift */; };
 		6149E95B2BC837C7009ECD83 /* SpectralEnhancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9572BC837C7009ECD83 /* SpectralEnhancer.swift */; };
 		6149E95C2BC837C7009ECD83 /* NoteProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9582BC837C7009ECD83 /* NoteProcessing.swift */; };
 		6149E95D2BC837C7009ECD83 /* PeaksSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9592BC837C7009ECD83 /* PeaksSorter.swift */; };
-		6149E9602BC83813009ECD83 /* CBass in Frameworks */ = {isa = PBXBuildFile; productRef = 6149E95F2BC83813009ECD83 /* CBass */; };
 		6149E9622BC83994009ECD83 /* AudioVisualizers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9612BC83994009ECD83 /* AudioVisualizers.swift */; };
 		614B61702BBF167D003A4935 /* DistortionEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */; };
 		614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B61712BBF22EC003A4935 /* LayerEffectViews.swift */; };
 		6153C7392BEBDC120062CB26 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153C7382BEBDC120062CB26 /* UtilityExtensions.swift */; };
 		617C3E432BD4454800DDC65D /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C3E422BD4454800DDC65D /* Transitions.swift */; };
+		618D0FEF2BF29EFC00E3E8E8 /* AudioVisualizer in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FEE2BF29EFC00E3E8E8 /* AudioVisualizer */; };
+		618D0FF12BF29EFC00E3E8E8 /* ColorEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FF02BF29EFC00E3E8E8 /* ColorEffect */; };
+		618D0FF32BF29EFC00E3E8E8 /* DistortionEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FF22BF29EFC00E3E8E8 /* DistortionEffect */; };
+		618D0FF52BF29EFC00E3E8E8 /* LayerEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FF42BF29EFC00E3E8E8 /* LayerEffect */; };
+		618D0FF72BF29EFC00E3E8E8 /* ShaderArt in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FF62BF29EFC00E3E8E8 /* ShaderArt */; };
+		618D0FF92BF29EFC00E3E8E8 /* Transition in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FF82BF29EFC00E3E8E8 /* Transition */; };
+		618D0FFB2BF29EFC00E3E8E8 /* iShader in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FFA2BF29EFC00E3E8E8 /* iShader */; };
+		618D0FFE2BF29F2200E3E8E8 /* CBass in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FFD2BF29F2200E3E8E8 /* CBass */; };
 		61920EC82BC2E4CE00989BB9 /* ShaderGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */; };
 		61A488D22BC2A5AA003BE4F2 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A488D12BC2A5AA003BE4F2 /* Gradients.swift */; };
 		61B7ABB02BC1DFC400437D33 /* DemoAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */; };
@@ -81,14 +81,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				612D27F92BC46D770061D6FD /* iShader in Frameworks */,
-				6149E9602BC83813009ECD83 /* CBass in Frameworks */,
-				612D27F52BC46D770061D6FD /* ShaderArt in Frameworks */,
-				612D27F72BC46D770061D6FD /* Transition in Frameworks */,
-				612D27F12BC46D770061D6FD /* DistortionEffect in Frameworks */,
-				612D27F32BC46D770061D6FD /* LayerEffect in Frameworks */,
-				612D27ED2BC46D770061D6FD /* AudioVisualizer in Frameworks */,
-				612D27EF2BC46D770061D6FD /* ColorEffect in Frameworks */,
+				618D0FFB2BF29EFC00E3E8E8 /* iShader in Frameworks */,
+				618D0FFE2BF29F2200E3E8E8 /* CBass in Frameworks */,
+				618D0FF72BF29EFC00E3E8E8 /* ShaderArt in Frameworks */,
+				618D0FF92BF29EFC00E3E8E8 /* Transition in Frameworks */,
+				618D0FF32BF29EFC00E3E8E8 /* DistortionEffect in Frameworks */,
+				618D0FF52BF29EFC00E3E8E8 /* LayerEffect in Frameworks */,
+				618D0FEF2BF29EFC00E3E8E8 /* AudioVisualizer in Frameworks */,
+				618D0FF12BF29EFC00E3E8E8 /* ColorEffect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +299,14 @@
 			);
 			name = BookiShader;
 			packageProductDependencies = (
-				612D27EC2BC46D770061D6FD /* AudioVisualizer */,
-				612D27EE2BC46D770061D6FD /* ColorEffect */,
-				612D27F02BC46D770061D6FD /* DistortionEffect */,
-				612D27F22BC46D770061D6FD /* LayerEffect */,
-				612D27F42BC46D770061D6FD /* ShaderArt */,
-				612D27F62BC46D770061D6FD /* Transition */,
-				612D27F82BC46D770061D6FD /* iShader */,
-				6149E95F2BC83813009ECD83 /* CBass */,
+				618D0FEE2BF29EFC00E3E8E8 /* AudioVisualizer */,
+				618D0FF02BF29EFC00E3E8E8 /* ColorEffect */,
+				618D0FF22BF29EFC00E3E8E8 /* DistortionEffect */,
+				618D0FF42BF29EFC00E3E8E8 /* LayerEffect */,
+				618D0FF62BF29EFC00E3E8E8 /* ShaderArt */,
+				618D0FF82BF29EFC00E3E8E8 /* Transition */,
+				618D0FFA2BF29EFC00E3E8E8 /* iShader */,
+				618D0FFD2BF29F2200E3E8E8 /* CBass */,
 			);
 			productName = BookiShader;
 			productReference = 611AA9E42BBC2ED300A1531B /* BookiShader.app */;
@@ -337,8 +337,8 @@
 			);
 			mainGroup = 611AA9DB2BBC2ED300A1531B;
 			packageReferences = (
-				612D27EB2BC46D770061D6FD /* XCRemoteSwiftPackageReference "iShader" */,
-				6149E95E2BC83813009ECD83 /* XCRemoteSwiftPackageReference "CBass" */,
+				618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */,
+				618D0FFC2BF29F2200E3E8E8 /* XCRemoteSwiftPackageReference "CBass" */,
 			);
 			productRefGroup = 611AA9E52BBC2ED300A1531B /* Products */;
 			projectDirPath = "";
@@ -613,15 +613,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		612D27EB2BC46D770061D6FD /* XCRemoteSwiftPackageReference "iShader" */ = {
+		618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Treata11/iShader/";
+			repositoryURL = "https://github.com/Keith-43/iShader";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		6149E95E2BC83813009ECD83 /* XCRemoteSwiftPackageReference "CBass" */ = {
+		618D0FFC2BF29F2200E3E8E8 /* XCRemoteSwiftPackageReference "CBass" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Treata11/CBass";
 			requirement = {
@@ -632,44 +632,44 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		612D27EC2BC46D770061D6FD /* AudioVisualizer */ = {
+		618D0FEE2BF29EFC00E3E8E8 /* AudioVisualizer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 612D27EB2BC46D770061D6FD /* XCRemoteSwiftPackageReference "iShader" */;
+			package = 618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */;
 			productName = AudioVisualizer;
 		};
-		612D27EE2BC46D770061D6FD /* ColorEffect */ = {
+		618D0FF02BF29EFC00E3E8E8 /* ColorEffect */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 612D27EB2BC46D770061D6FD /* XCRemoteSwiftPackageReference "iShader" */;
+			package = 618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */;
 			productName = ColorEffect;
 		};
-		612D27F02BC46D770061D6FD /* DistortionEffect */ = {
+		618D0FF22BF29EFC00E3E8E8 /* DistortionEffect */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 612D27EB2BC46D770061D6FD /* XCRemoteSwiftPackageReference "iShader" */;
+			package = 618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */;
 			productName = DistortionEffect;
 		};
-		612D27F22BC46D770061D6FD /* LayerEffect */ = {
+		618D0FF42BF29EFC00E3E8E8 /* LayerEffect */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 612D27EB2BC46D770061D6FD /* XCRemoteSwiftPackageReference "iShader" */;
+			package = 618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */;
 			productName = LayerEffect;
 		};
-		612D27F42BC46D770061D6FD /* ShaderArt */ = {
+		618D0FF62BF29EFC00E3E8E8 /* ShaderArt */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 612D27EB2BC46D770061D6FD /* XCRemoteSwiftPackageReference "iShader" */;
+			package = 618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */;
 			productName = ShaderArt;
 		};
-		612D27F62BC46D770061D6FD /* Transition */ = {
+		618D0FF82BF29EFC00E3E8E8 /* Transition */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 612D27EB2BC46D770061D6FD /* XCRemoteSwiftPackageReference "iShader" */;
+			package = 618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */;
 			productName = Transition;
 		};
-		612D27F82BC46D770061D6FD /* iShader */ = {
+		618D0FFA2BF29EFC00E3E8E8 /* iShader */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 612D27EB2BC46D770061D6FD /* XCRemoteSwiftPackageReference "iShader" */;
+			package = 618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */;
 			productName = iShader;
 		};
-		6149E95F2BC83813009ECD83 /* CBass */ = {
+		618D0FFD2BF29F2200E3E8E8 /* CBass */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6149E95E2BC83813009ECD83 /* XCRemoteSwiftPackageReference "CBass" */;
+			package = 618D0FFC2BF29F2200E3E8E8 /* XCRemoteSwiftPackageReference "CBass" */;
 			productName = CBass;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -12,10 +12,10 @@
     {
       "identity" : "ishader",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Treata11/iShader/",
+      "location" : "https://github.com/Keith-43/iShader",
       "state" : {
         "branch" : "main",
-        "revision" : "5ba5a92082c72b3a67365f9c493b1b51d3e4ee48"
+        "revision" : "d0a9417f65905c2813d7770a40c4cfe83b8e2105"
       }
     }
   ],
