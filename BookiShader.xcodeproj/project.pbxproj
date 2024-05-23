@@ -18,6 +18,8 @@
 		612D27E82BC4160F0061D6FD /* ShaderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D27E72BC4160F0061D6FD /* ShaderPage.swift */; };
 		612D27EA2BC41F530061D6FD /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D27E92BC41F530061D6FD /* HUD.swift */; };
 		613B65652BFF3F72005DF758 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 613B65642BFF3F72005DF758 /* Splash */; };
+		613B65692BFF7FE0005DF758 /* ShaderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B65682BFF7FE0005DF758 /* ShaderTextView.swift */; };
+		613B656B2BFF8119005DF758 /* SourceCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B656A2BFF8119005DF758 /* SourceCodeView.swift */; };
 		6149E95A2BC837C7009ECD83 /* BassAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9562BC837C7009ECD83 /* BassAudioEngine.swift */; };
 		6149E95B2BC837C7009ECD83 /* SpectralEnhancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9572BC837C7009ECD83 /* SpectralEnhancer.swift */; };
 		6149E95C2BC837C7009ECD83 /* NoteProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9582BC837C7009ECD83 /* NoteProcessing.swift */; };
@@ -59,6 +61,8 @@
 		611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Be Khod Ay.mp3"; sourceTree = "<group>"; };
 		612D27E72BC4160F0061D6FD /* ShaderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderPage.swift; sourceTree = "<group>"; };
 		612D27E92BC41F530061D6FD /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		613B65682BFF7FE0005DF758 /* ShaderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderTextView.swift; sourceTree = "<group>"; };
+		613B656A2BFF8119005DF758 /* SourceCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCodeView.swift; sourceTree = "<group>"; };
 		6149E9562BC837C7009ECD83 /* BassAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BassAudioEngine.swift; sourceTree = "<group>"; };
 		6149E9572BC837C7009ECD83 /* SpectralEnhancer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectralEnhancer.swift; sourceTree = "<group>"; };
 		6149E9582BC837C7009ECD83 /* NoteProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteProcessing.swift; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */,
 				612D27E72BC4160F0061D6FD /* ShaderPage.swift */,
 				612D27E92BC41F530061D6FD /* HUD.swift */,
+				613B65682BFF7FE0005DF758 /* ShaderTextView.swift */,
+				613B656A2BFF8119005DF758 /* SourceCodeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -388,8 +394,10 @@
 				614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */,
 				611AAA082BBC54C700A1531B /* AudioVisualizerViews.swift in Sources */,
 				6149E95C2BC837C7009ECD83 /* NoteProcessing.swift in Sources */,
+				613B656B2BFF8119005DF758 /* SourceCodeView.swift in Sources */,
 				61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */,
 				61FFC3182BC0210A001FA0EA /* ArtShaders.swift in Sources */,
+				613B65692BFF7FE0005DF758 /* ShaderTextView.swift in Sources */,
 				612D27EA2BC41F530061D6FD /* HUD.swift in Sources */,
 				6153C7392BEBDC120062CB26 /* UtilityExtensions.swift in Sources */,
 				617C3E432BD4454800DDC65D /* Transitions.swift in Sources */,
