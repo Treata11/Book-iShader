@@ -8,49 +8,60 @@
  
 */
 
-/*
 import SwiftUI
-import Splash
-
-// FIXME: No syntax-coloring onAppear
+import CodeEditor
 
 struct SourceCodeView: View {
-    @StateObject var context = ShaderTextEditorContext()
-    @Binding var sourceString: NSAttributedString
+    var shaderName: String
     
-    @Environment((\.colorScheme)) var colorScheme
-
-    let theme: Splash.Theme
-    let sourceHighlighter: SyntaxHighlighter<AttributedStringOutputFormat>
-
-    init(sourceString: Binding<NSAttributedString>, editorModel: ShaderEditor) {
-        self._sourceString = sourceString
-        self.theme = editorModel.theme
-        self.sourceHighlighter = editorModel.sourceHighlighter
+    @State private var source = "// No Sources found!"
+    @State private var theme: CodeEditor.ThemeName = CodeEditor.ThemeName(rawValue: "xcode")
+    
+    @Environment((\.colorScheme)) var colorScheme {
+        didSet {
+            self.theme = (oldValue == .light) ? CodeEditor.ThemeName(rawValue: "xcode") : .atelierSavannaDark
+        }
     }
+    
+    #if os(macOS)
+        @AppStorage("fontsize") var fontSize = Int(NSFont.systemFontSize)
+    #endif
+      
+    init(shaderName: String) { self.shaderName = shaderName }
 
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            ShaderTextEditor(text: $sourceString, context: context) { textView in
-                textView.backgroundColor = theme.backgroundColor
-                textView.insertionPointColor = colorScheme == .light ? .black : .white
-            }
-            .onChange(of: context.attributedString) { _, newContents in
-                guard let newString = newContents?.string else { return }
-                // Re-highlight text on every keystroke. This might look like
-                // it leads to an infinite loop, but updates via the context
-                // are designed not to cause changes to be published back to us
-                context.attributedString = sourceHighlighter.highlight(newString)
-            }
+        Group {
+            #if os(macOS)
+                CodeEditor(source: $source, language: .cpp, theme: theme,
+                           fontSize: .init(get: { CGFloat(fontSize)  },
+                                       set: { fontSize = Int($0) }))
+                    .frame(minWidth: 480, minHeight: 360)
+            #else
+                CodeEditor(source: $source, language: .cpp, theme: theme)
+            #endif
+        }
+        .onAppear {
+            source = findSourceString(of: shaderName)
         }
     }
 }
 
 #Preview("Source Code View") {
-    @Environment((\.colorScheme)) var colorScheme
-    
-    @Bindable var editorModel = ShaderEditor(shaderName: "CRT", colorScheme: colorScheme)
-    
-    return SourceCodeView(sourceString: $editorModel.sourceString, editorModel: editorModel)
+    SourceCodeView(shaderName: "CRT")
 }
-*/
+
+// MARK: - Source Code
+
+// TODO: Find a better way to extract the source-code from iShader lib
+func findSourceString(of shader: String) -> String {
+    let url =
+        Bundle.shaderArt.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
+        Bundle.colorEffect.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
+        Bundle.transition.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
+        Bundle.layerEffect.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
+        Bundle.distortionEffect.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
+        Bundle.audioVisualizer.url(forResource: "Shaders/" + shader, withExtension: "metal")
+    
+    // FIXME: ForceUnwrapped nil URL
+    return (try? String(contentsOf: url!)) ?? "// No Sources Found"
+}
