@@ -11,6 +11,13 @@
 import LayerEffect
 import SwiftUI
 
+let layerEffectViews = [
+    AnyView(ColorPlanes()), AnyView(Emboss()),
+    AnyView(Bubble()), AnyView(WarpingLoupe()),
+    AnyView(VHS()), AnyView(Sobel()),
+    AnyView(SoftThreshold()), AnyView(SineWave())
+]
+
 // MARK: - Color Planes
 
 struct ColorPlanes: View {

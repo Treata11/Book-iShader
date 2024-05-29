@@ -11,6 +11,15 @@
 import ColorEffect
 import SwiftUI
 
+let colorEffectViews: [AnyView] = [
+    AnyView(Luminence()), AnyView(Εxposure()),
+    AnyView(Gamma()), AnyView(Vibrance()),
+    AnyView(Vibrance()), AnyView(Vignette()),
+    AnyView(NightVision()), AnyView(Infrared()),
+    AnyView(CRT()), AnyView(LightbulbScreen()),
+    AnyView(FilmGrain()), AnyView(TileableWaterCaustic())
+]
+
 // MARK: - Luminence
 
 struct Luminence: View {

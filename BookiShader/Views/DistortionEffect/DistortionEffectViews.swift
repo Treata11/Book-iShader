@@ -11,6 +11,13 @@
 import DistortionEffect
 import SwiftUI
 
+let distortionEffectViews: [AnyView] = [
+    AnyView(Wave()), AnyView(RelativeWave()),
+    AnyView(Water()), AnyView(SineDistortion()),
+    AnyView(WorleyDisplacement()), AnyView(BarrelDistortion()),
+    AnyView(Pinch())
+]
+
 // MARK: - Wave
 
 struct Wave: View {
