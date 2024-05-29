@@ -15,19 +15,18 @@ struct SourceCodeView: View {
     var shaderName: String
     
     @State private var source = "// No Sources found!"
-    @State private var theme: CodeEditor.ThemeName = CodeEditor.ThemeName(rawValue: "xcode")
     
-    @Environment((\.colorScheme)) var colorScheme {
-        didSet {
-            self.theme = (oldValue == .light) ? CodeEditor.ThemeName(rawValue: "xcode") : .atelierSavannaDark
-        }
-    }
+    @Environment((\.colorScheme)) var colorScheme
     
     #if os(macOS)
         @AppStorage("fontsize") var fontSize = Int(NSFont.systemFontSize)
     #endif
       
     init(shaderName: String) { self.shaderName = shaderName }
+    
+    private var theme: CodeEditor.ThemeName {
+        (colorScheme == .light) ? .init(rawValue: "xcode") : .init(rawValue: "atom-one-dark")
+    }
 
     var body: some View {
         Group {

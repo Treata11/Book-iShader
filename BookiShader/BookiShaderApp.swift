@@ -10,16 +10,16 @@ import SwiftUI
 @main
 struct BookiShaderApp: App {
     @Bindable var manager = ShaderHud()
+    @Bindable var audioManager = BassAudioEngine(filePath: Bundle.musicPath)
     
     var body: some Scene {
         WindowGroup {
-//            ArtShaders()
-//            AudioVisualizers()
-            
-//            Transitions()
-            
-            ShaderGrid(contents: gradientViews)
+            Home()
                 .environment(manager)
+                .environment(audioManager)
+                .onAppear {
+                    audioManager.stopMusicPlay()
+                }
         }
     }
 }

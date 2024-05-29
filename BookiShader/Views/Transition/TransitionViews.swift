@@ -10,6 +10,8 @@
 
 import SwiftUI
 
+// FIXME: Source code of the transitions which use the `TransitionPreview` template would never be found
+
 let transitionViews: [AnyView] = [
     AnyView(CirclesTransition()), AnyView(SwirlTransition()),
     AnyView(TransitionPreview(transition: .genie())), AnyView(WindTransition()),
