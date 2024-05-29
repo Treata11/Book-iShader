@@ -41,32 +41,38 @@ struct ShaderGrid: View {
     #endif
     
     var body: some View {
-        GeometryReader {
-            let size = $0.size
-            let gridItem = GridItem(.flexible(minimum: itemBound), spacing: spacing)
-            
-            ScrollView(.vertical, showsIndicators: true) {
-                LazyVGrid(columns: Array(repeating: gridItem, count: columns), spacing: spacing) {
-                    ForEach(contents.indices, id: \.self) { index in
-                        let shaderView = contents[index]
-                        
-                        VStack(alignment: .leading) {
-                            shaderView
-                                .frame(height: itemBound)
-                                .clipShape(.rect(cornerRadius: 12))
+        NavigationStack {
+            GeometryReader {
+                let size = $0.size
+                let gridItem = GridItem(.flexible(minimum: itemBound), spacing: spacing)
+                
+                ScrollView(.vertical, showsIndicators: true) {
+                    LazyVGrid(columns: Array(repeating: gridItem, count: columns), spacing: spacing) {
+                        ForEach(contents.indices, id: \.self) { index in
+                            let shaderView = contents[index]
+                            let shaderName = shaderView.extractedStructName
                             
-                            Spacer(minLength: spacing/3)
-                            Text(shaderView.extractedStructName)
-                                .font(.system(.headline, design: .rounded))
+                            NavigationLink(destination: ShaderPage(shaderView: shaderView, name: shaderName)) {
+                                VStack(alignment: .leading) {
+                                    shaderView
+                                        .frame(height: itemBound)
+                                        .clipShape(.rect(cornerRadius: 12))
+                                    
+                                    Spacer(minLength: spacing/3)
+                                    
+                                    Text(shaderName.spacedOut)
+                                        .font(.system(.headline, design: .rounded))
+                                }
+                            }
                         }
                     }
-                }
-                .padding(.horizontal, spacing/1.5)
-                .padding(.vertical, spacing*1.5)
-                // reactiveness of the grid
-                .onAppear { calculateColumnCount(from: size) }
-                .onChange(of: size) { _, newSize in
-                    calculateColumnCount(from: newSize)
+                    .padding(.horizontal, spacing/1.5)
+                    .padding(.vertical, spacing*1.5)
+                    // reactiveness of the grid
+                    .onAppear { calculateColumnCount(from: size) }
+                    .onChange(of: size) { _, newSize in
+                        calculateColumnCount(from: newSize)
+                    }
                 }
             }
         }

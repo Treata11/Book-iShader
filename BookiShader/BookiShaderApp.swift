@@ -9,12 +9,17 @@ import SwiftUI
 
 @main
 struct BookiShaderApp: App {
+    @Bindable var manager = ShaderHud()
+    
     var body: some Scene {
         WindowGroup {
 //            ArtShaders()
 //            AudioVisualizers()
             
-            Transitions()
+//            Transitions()
+            
+            ShaderGrid(contents: gradientViews)
+                .environment(manager)
         }
     }
 }

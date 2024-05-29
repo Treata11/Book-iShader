@@ -35,13 +35,14 @@ struct SourceCodeView: View {
                 CodeEditor(source: $source, language: .cpp, theme: theme,
                            fontSize: .init(get: { CGFloat(fontSize)  },
                                        set: { fontSize = Int($0) }))
-                    .frame(minWidth: 480, minHeight: 360)
+                    .frame(minWidth: 120)
             #else
                 CodeEditor(source: $source, language: .cpp, theme: theme)
             #endif
         }
         .onAppear {
             source = findSourceString(of: shaderName)
+            print("SourceCodeView; Shader Name: \(shaderName)")
         }
     }
 }
@@ -60,8 +61,12 @@ func findSourceString(of shader: String) -> String {
         Bundle.transition.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
         Bundle.layerEffect.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
         Bundle.distortionEffect.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
-        Bundle.audioVisualizer.url(forResource: "Shaders/" + shader, withExtension: "metal")
+        Bundle.audioVisualizer.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
+        Bundle.shaderArt.url(forResource: "Shaders/Gradients/" + shader, withExtension: "metal")
     
-    // FIXME: ForceUnwrapped nil URL
-    return (try? String(contentsOf: url!)) ?? "// No Sources Found"
+    return (try? String(contentsOf: url ?? Bundle.empty))!
+}
+
+extension Bundle {
+    static let empty = Bundle.main.url(forResource: "Empty", withExtension: nil)!
 }
