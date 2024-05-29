@@ -8,6 +8,7 @@
  
 */
 
+/*
 import Splash
 import SwiftUI
 
@@ -60,3 +61,4 @@ class ShaderEditor {
         self.sourceString = .init(string: sourceCode)
     }
 }
+*/

@@ -10,6 +10,24 @@
       }
     },
     {
+      "identity" : "codeeditor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ZeeZide/CodeEditor",
+      "state" : {
+        "revision" : "3a924589c957383693cae6336a29c3ead602ec96",
+        "version" : "1.2.4"
+      }
+    },
+    {
+      "identity" : "highlightr",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/raspu/Highlightr",
+      "state" : {
+        "revision" : "93199b9e434f04bda956a613af8f571933f9f037",
+        "version" : "2.1.2"
+      }
+    },
+    {
       "identity" : "ishader",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Keith-43/iShader",

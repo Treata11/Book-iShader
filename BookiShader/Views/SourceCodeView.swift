@@ -8,6 +8,7 @@
  
 */
 
+/*
 import SwiftUI
 import Splash
 
@@ -16,6 +17,8 @@ import Splash
 struct SourceCodeView: View {
     @StateObject var context = ShaderTextEditorContext()
     @Binding var sourceString: NSAttributedString
+    
+    @Environment((\.colorScheme)) var colorScheme
 
     let theme: Splash.Theme
     let sourceHighlighter: SyntaxHighlighter<AttributedStringOutputFormat>
@@ -30,7 +33,7 @@ struct SourceCodeView: View {
         ZStack(alignment: .topTrailing) {
             ShaderTextEditor(text: $sourceString, context: context) { textView in
                 textView.backgroundColor = theme.backgroundColor
-                textView.insertionPointColor = NSColor.white
+                textView.insertionPointColor = colorScheme == .light ? .black : .white
             }
             .onChange(of: context.attributedString) { _, newContents in
                 guard let newString = newContents?.string else { return }
@@ -50,3 +53,4 @@ struct SourceCodeView: View {
     
     return SourceCodeView(sourceString: $editorModel.sourceString, editorModel: editorModel)
 }
+*/

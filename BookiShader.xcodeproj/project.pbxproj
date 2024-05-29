@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		611058112C0736A900A24DF5 /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611058102C0736A800A24DF5 /* ViewTests.swift */; };
+		611058142C07372B00A24DF5 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 611058132C07372B00A24DF5 /* CodeEditor */; };
 		61138D732BBE07A20077AE71 /* ColorEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61138D722BBE07A20077AE71 /* ColorEffectViews.swift */; };
 		611621AA2BC6EB1400E48762 /* ShaderInputViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611621A92BC6EB1400E48762 /* ShaderInputViewBuilder.swift */; };
 		611AA9E82BBC2ED300A1531B /* BookiShaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611AA9E72BBC2ED300A1531B /* BookiShaderApp.swift */; };
@@ -17,7 +19,6 @@
 		611AAA0C2BBC5F9000A1531B /* Be Khod Ay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 611AAA0B2BBC5F9000A1531B /* Be Khod Ay.mp3 */; };
 		612D27E82BC4160F0061D6FD /* ShaderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D27E72BC4160F0061D6FD /* ShaderPage.swift */; };
 		612D27EA2BC41F530061D6FD /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D27E92BC41F530061D6FD /* HUD.swift */; };
-		613B65652BFF3F72005DF758 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 613B65642BFF3F72005DF758 /* Splash */; };
 		613B65692BFF7FE0005DF758 /* ShaderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B65682BFF7FE0005DF758 /* ShaderTextView.swift */; };
 		613B656B2BFF8119005DF758 /* SourceCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B656A2BFF8119005DF758 /* SourceCodeView.swift */; };
 		6149E95A2BC837C7009ECD83 /* BassAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149E9562BC837C7009ECD83 /* BassAudioEngine.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		611058102C0736A800A24DF5 /* ViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTests.swift; sourceTree = "<group>"; };
 		61138D722BBE07A20077AE71 /* ColorEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEffectViews.swift; sourceTree = "<group>"; };
 		611621A92BC6EB1400E48762 /* ShaderInputViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderInputViewBuilder.swift; sourceTree = "<group>"; };
 		611AA9E42BBC2ED300A1531B /* BookiShader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookiShader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,8 +92,8 @@
 			files = (
 				618D0FFB2BF29EFC00E3E8E8 /* iShader in Frameworks */,
 				618D0FFE2BF29F2200E3E8E8 /* CBass in Frameworks */,
-				613B65652BFF3F72005DF758 /* Splash in Frameworks */,
 				618D0FF72BF29EFC00E3E8E8 /* ShaderArt in Frameworks */,
+				611058142C07372B00A24DF5 /* CodeEditor in Frameworks */,
 				618D0FF92BF29EFC00E3E8E8 /* Transition in Frameworks */,
 				618D0FF32BF29EFC00E3E8E8 /* DistortionEffect in Frameworks */,
 				618D0FF52BF29EFC00E3E8E8 /* LayerEffect in Frameworks */,
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				61B7ABAF2BC1DFC400437D33 /* DemoAnimation.swift */,
+				611058102C0736A800A24DF5 /* ViewTests.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -318,7 +321,7 @@
 				618D0FF82BF29EFC00E3E8E8 /* Transition */,
 				618D0FFA2BF29EFC00E3E8E8 /* iShader */,
 				618D0FFD2BF29F2200E3E8E8 /* CBass */,
-				613B65642BFF3F72005DF758 /* Splash */,
+				611058132C07372B00A24DF5 /* CodeEditor */,
 			);
 			productName = BookiShader;
 			productReference = 611AA9E42BBC2ED300A1531B /* BookiShader.app */;
@@ -351,7 +354,7 @@
 			packageReferences = (
 				618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */,
 				618D0FFC2BF29F2200E3E8E8 /* XCRemoteSwiftPackageReference "CBass" */,
-				613B65632BFF3F72005DF758 /* XCLocalSwiftPackageReference "Splash" */,
+				611058122C07372B00A24DF5 /* XCRemoteSwiftPackageReference "CodeEditor" */,
 			);
 			productRefGroup = 611AA9E52BBC2ED300A1531B /* Products */;
 			projectDirPath = "";
@@ -400,6 +403,7 @@
 				613B65692BFF7FE0005DF758 /* ShaderTextView.swift in Sources */,
 				612D27EA2BC41F530061D6FD /* HUD.swift in Sources */,
 				6153C7392BEBDC120062CB26 /* UtilityExtensions.swift in Sources */,
+				611058112C0736A900A24DF5 /* ViewTests.swift in Sources */,
 				617C3E432BD4454800DDC65D /* Transitions.swift in Sources */,
 				6149E9622BC83994009ECD83 /* AudioVisualizers.swift in Sources */,
 				6149E95A2BC837C7009ECD83 /* BassAudioEngine.swift in Sources */,
@@ -628,14 +632,15 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		613B65632BFF3F72005DF758 /* XCLocalSwiftPackageReference "Splash" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Splash;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
+		611058122C07372B00A24DF5 /* XCRemoteSwiftPackageReference "CodeEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZeeZide/CodeEditor";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.4;
+			};
+		};
 		618D0FED2BF29EFC00E3E8E8 /* XCRemoteSwiftPackageReference "iShader" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Keith-43/iShader";
@@ -655,9 +660,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		613B65642BFF3F72005DF758 /* Splash */ = {
+		611058132C07372B00A24DF5 /* CodeEditor */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Splash;
+			package = 611058122C07372B00A24DF5 /* XCRemoteSwiftPackageReference "CodeEditor" */;
+			productName = CodeEditor;
 		};
 		618D0FEE2BF29EFC00E3E8E8 /* AudioVisualizer */ = {
 			isa = XCSwiftPackageProductDependency;
