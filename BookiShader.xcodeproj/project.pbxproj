@@ -119,6 +119,7 @@
 		616B556C2C0F1A8500350030 /* AudioEclipse in Resources */ = {isa = PBXBuildFile; fileRef = 616B55192C0F1A8500350030 /* AudioEclipse */; };
 		616B556D2C0F1A8500350030 /* RoundAudioSpecturm in Resources */ = {isa = PBXBuildFile; fileRef = 616B551A2C0F1A8500350030 /* RoundAudioSpecturm */; };
 		616B556E2C0F1A8500350030 /* ShadesOfMusic in Resources */ = {isa = PBXBuildFile; fileRef = 616B551B2C0F1A8500350030 /* ShadesOfMusic */; };
+		616B55702C0F1E0800350030 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 616B556F2C0F1E0800350030 /* README.md */; };
 		617C3E432BD4454800DDC65D /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C3E422BD4454800DDC65D /* Transitions.swift */; };
 		618D0FFE2BF29F2200E3E8E8 /* CBass in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FFD2BF29F2200E3E8E8 /* CBass */; };
 		61920EC82BC2E4CE00989BB9 /* ShaderGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */; };
@@ -239,6 +240,7 @@
 		616B55192C0F1A8500350030 /* AudioEclipse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AudioEclipse; sourceTree = "<group>"; };
 		616B551A2C0F1A8500350030 /* RoundAudioSpecturm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RoundAudioSpecturm; sourceTree = "<group>"; };
 		616B551B2C0F1A8500350030 /* ShadesOfMusic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShadesOfMusic; sourceTree = "<group>"; };
+		616B556F2C0F1E0800350030 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		617C3E422BD4454800DDC65D /* Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
 		61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderGrid.swift; sourceTree = "<group>"; };
 		61A488D12BC2A5AA003BE4F2 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		611AA9DB2BBC2ED300A1531B = {
 			isa = PBXGroup;
 			children = (
+				616B556F2C0F1E0800350030 /* README.md */,
 				611AA9E62BBC2ED300A1531B /* BookiShader */,
 				611AA9E52BBC2ED300A1531B /* Products */,
 				611AAA032BBC32A700A1531B /* Frameworks */,
@@ -769,6 +772,7 @@
 				616B554E2C0F1A8500350030 /* Exposure in Resources */,
 				616B55682C0F1A8500350030 /* GlowingSoundParticles in Resources */,
 				616B55662C0F1A8500350030 /* WindowBlinds in Resources */,
+				616B55702C0F1E0800350030 /* README.md in Resources */,
 				616B55222C0F1A8500350030 /* Turbulence in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
