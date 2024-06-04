@@ -54,14 +54,7 @@ struct SourceCodeView: View {
 
 // TODO: Find a better way to extract the source-code from iShader lib
 func findSourceString(of shader: String) -> String {
-    let url =
-        Bundle.shaderArt.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
-        Bundle.colorEffect.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
-        Bundle.transition.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
-        Bundle.layerEffect.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
-        Bundle.distortionEffect.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
-        Bundle.audioVisualizer.url(forResource: "Shaders/" + shader, withExtension: "metal") ??
-        Bundle.shaderArt.url(forResource: "Shaders/Gradients/" + shader, withExtension: "metal")
+    let url = Bundle.main.url(forResource: shader, withExtension: nil)
     
     return (try? String(contentsOf: url ?? Bundle.empty))!
 }

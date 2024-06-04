@@ -36,6 +36,89 @@
 		614B61702BBF167D003A4935 /* DistortionEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */; };
 		614B61722BBF22EC003A4935 /* LayerEffectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614B61712BBF22EC003A4935 /* LayerEffectViews.swift */; };
 		6153C7392BEBDC120062CB26 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153C7382BEBDC120062CB26 /* UtilityExtensions.swift */; };
+		616B551C2C0F1A8500350030 /* ElectricField in Resources */ = {isa = PBXBuildFile; fileRef = 616B54C32C0F1A8400350030 /* ElectricField */; };
+		616B551D2C0F1A8500350030 /* Clouds in Resources */ = {isa = PBXBuildFile; fileRef = 616B54C42C0F1A8400350030 /* Clouds */; };
+		616B551E2C0F1A8500350030 /* SineWaves in Resources */ = {isa = PBXBuildFile; fileRef = 616B54C52C0F1A8400350030 /* SineWaves */; };
+		616B551F2C0F1A8500350030 /* GlowingMarblingBlack in Resources */ = {isa = PBXBuildFile; fileRef = 616B54C62C0F1A8400350030 /* GlowingMarblingBlack */; };
+		616B55202C0F1A8500350030 /* Portal in Resources */ = {isa = PBXBuildFile; fileRef = 616B54C72C0F1A8400350030 /* Portal */; };
+		616B55212C0F1A8500350030 /* TMGyroids in Resources */ = {isa = PBXBuildFile; fileRef = 616B54C82C0F1A8400350030 /* TMGyroids */; };
+		616B55222C0F1A8500350030 /* Turbulence in Resources */ = {isa = PBXBuildFile; fileRef = 616B54C92C0F1A8400350030 /* Turbulence */; };
+		616B55232C0F1A8500350030 /* Iris in Resources */ = {isa = PBXBuildFile; fileRef = 616B54CA2C0F1A8400350030 /* Iris */; };
+		616B55242C0F1A8500350030 /* StarField in Resources */ = {isa = PBXBuildFile; fileRef = 616B54CB2C0F1A8400350030 /* StarField */; };
+		616B55252C0F1A8500350030 /* ModFan in Resources */ = {isa = PBXBuildFile; fileRef = 616B54CC2C0F1A8400350030 /* ModFan */; };
+		616B55262C0F1A8500350030 /* Fireworks in Resources */ = {isa = PBXBuildFile; fileRef = 616B54CD2C0F1A8400350030 /* Fireworks */; };
+		616B55272C0F1A8500350030 /* CrystalCaustic in Resources */ = {isa = PBXBuildFile; fileRef = 616B54CE2C0F1A8400350030 /* CrystalCaustic */; };
+		616B55282C0F1A8500350030 /* WetNeuralNetwork in Resources */ = {isa = PBXBuildFile; fileRef = 616B54CF2C0F1A8400350030 /* WetNeuralNetwork */; };
+		616B55292C0F1A8500350030 /* StarNest in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D02C0F1A8400350030 /* StarNest */; };
+		616B552A2C0F1A8500350030 /* HypnoticRipples in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D12C0F1A8400350030 /* HypnoticRipples */; };
+		616B552B2C0F1A8500350030 /* Writhe in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D22C0F1A8400350030 /* Writhe */; };
+		616B552C2C0F1A8500350030 /* BeamDroplet in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D32C0F1A8400350030 /* BeamDroplet */; };
+		616B552D2C0F1A8500350030 /* SpiralRiders in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D42C0F1A8400350030 /* SpiralRiders */; };
+		616B552E2C0F1A8500350030 /* ExplosionCloud in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D52C0F1A8400350030 /* ExplosionCloud */; };
+		616B552F2C0F1A8500350030 /* NeonRug in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D62C0F1A8400350030 /* NeonRug */; };
+		616B55302C0F1A8500350030 /* RetroSun in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D72C0F1A8400350030 /* RetroSun */; };
+		616B55312C0F1A8500350030 /* Singularity in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D82C0F1A8400350030 /* Singularity */; };
+		616B55322C0F1A8500350030 /* BlueVoid in Resources */ = {isa = PBXBuildFile; fileRef = 616B54D92C0F1A8400350030 /* BlueVoid */; };
+		616B55332C0F1A8500350030 /* CosmicBlood in Resources */ = {isa = PBXBuildFile; fileRef = 616B54DA2C0F1A8400350030 /* CosmicBlood */; };
+		616B55342C0F1A8500350030 /* Lightning01 in Resources */ = {isa = PBXBuildFile; fileRef = 616B54DB2C0F1A8400350030 /* Lightning01 */; };
+		616B55352C0F1A8500350030 /* LavaBlobs in Resources */ = {isa = PBXBuildFile; fileRef = 616B54DC2C0F1A8400350030 /* LavaBlobs */; };
+		616B55362C0F1A8500350030 /* FBMLightning in Resources */ = {isa = PBXBuildFile; fileRef = 616B54DD2C0F1A8400350030 /* FBMLightning */; };
+		616B55372C0F1A8500350030 /* PulsatingFlesh in Resources */ = {isa = PBXBuildFile; fileRef = 616B54DE2C0F1A8400350030 /* PulsatingFlesh */; };
+		616B55382C0F1A8500350030 /* BaseWarpFBM in Resources */ = {isa = PBXBuildFile; fileRef = 616B54DF2C0F1A8400350030 /* BaseWarpFBM */; };
+		616B55392C0F1A8500350030 /* BlackHoleDawn in Resources */ = {isa = PBXBuildFile; fileRef = 616B54E02C0F1A8400350030 /* BlackHoleDawn */; };
+		616B553A2C0F1A8500350030 /* LensFlare in Resources */ = {isa = PBXBuildFile; fileRef = 616B54E12C0F1A8400350030 /* LensFlare */; };
+		616B553B2C0F1A8500350030 /* FluidGradient in Resources */ = {isa = PBXBuildFile; fileRef = 616B54E32C0F1A8400350030 /* FluidGradient */; };
+		616B553C2C0F1A8500350030 /* RainbowSherbet in Resources */ = {isa = PBXBuildFile; fileRef = 616B54E42C0F1A8400350030 /* RainbowSherbet */; };
+		616B553D2C0F1A8500350030 /* CrumpledWave in Resources */ = {isa = PBXBuildFile; fileRef = 616B54E52C0F1A8400350030 /* CrumpledWave */; };
+		616B553E2C0F1A8500350030 /* ColorWind in Resources */ = {isa = PBXBuildFile; fileRef = 616B54E62C0F1A8400350030 /* ColorWind */; };
+		616B553F2C0F1A8500350030 /* GradientFlow in Resources */ = {isa = PBXBuildFile; fileRef = 616B54E72C0F1A8400350030 /* GradientFlow */; };
+		616B55402C0F1A8500350030 /* Gradientify in Resources */ = {isa = PBXBuildFile; fileRef = 616B54E82C0F1A8400350030 /* Gradientify */; };
+		616B55412C0F1A8500350030 /* GlossyGradients in Resources */ = {isa = PBXBuildFile; fileRef = 616B54E92C0F1A8400350030 /* GlossyGradients */; };
+		616B55422C0F1A8500350030 /* RotatingGradient in Resources */ = {isa = PBXBuildFile; fileRef = 616B54EA2C0F1A8400350030 /* RotatingGradient */; };
+		616B55432C0F1A8500350030 /* ChromaGradients in Resources */ = {isa = PBXBuildFile; fileRef = 616B54EB2C0F1A8400350030 /* ChromaGradients */; };
+		616B55442C0F1A8500350030 /* VHS in Resources */ = {isa = PBXBuildFile; fileRef = 616B54ED2C0F1A8400350030 /* VHS */; };
+		616B55452C0F1A8500350030 /* Emboss in Resources */ = {isa = PBXBuildFile; fileRef = 616B54EE2C0F1A8400350030 /* Emboss */; };
+		616B55462C0F1A8500350030 /* Bubble in Resources */ = {isa = PBXBuildFile; fileRef = 616B54EF2C0F1A8400350030 /* Bubble */; };
+		616B55472C0F1A8500350030 /* SineWave in Resources */ = {isa = PBXBuildFile; fileRef = 616B54F02C0F1A8400350030 /* SineWave */; };
+		616B55482C0F1A8500350030 /* ColorPlanes in Resources */ = {isa = PBXBuildFile; fileRef = 616B54F12C0F1A8400350030 /* ColorPlanes */; };
+		616B55492C0F1A8500350030 /* WarpingLoupe in Resources */ = {isa = PBXBuildFile; fileRef = 616B54F22C0F1A8400350030 /* WarpingLoupe */; };
+		616B554A2C0F1A8500350030 /* SoftThreshold in Resources */ = {isa = PBXBuildFile; fileRef = 616B54F32C0F1A8400350030 /* SoftThreshold */; };
+		616B554B2C0F1A8500350030 /* Sobel in Resources */ = {isa = PBXBuildFile; fileRef = 616B54F42C0F1A8400350030 /* Sobel */; };
+		616B554C2C0F1A8500350030 /* Gamma in Resources */ = {isa = PBXBuildFile; fileRef = 616B54F62C0F1A8400350030 /* Gamma */; };
+		616B554D2C0F1A8500350030 /* NightVision in Resources */ = {isa = PBXBuildFile; fileRef = 616B54F72C0F1A8400350030 /* NightVision */; };
+		616B554E2C0F1A8500350030 /* Exposure in Resources */ = {isa = PBXBuildFile; fileRef = 616B54F82C0F1A8400350030 /* Exposure */; };
+		616B554F2C0F1A8500350030 /* LightbulbScreen  in Resources */ = {isa = PBXBuildFile; fileRef = 616B54F92C0F1A8400350030 /* LightbulbScreen  */; };
+		616B55502C0F1A8500350030 /* Infrared in Resources */ = {isa = PBXBuildFile; fileRef = 616B54FA2C0F1A8400350030 /* Infrared */; };
+		616B55512C0F1A8500350030 /* TileableWaterCaustic in Resources */ = {isa = PBXBuildFile; fileRef = 616B54FB2C0F1A8400350030 /* TileableWaterCaustic */; };
+		616B55522C0F1A8500350030 /* Luminence in Resources */ = {isa = PBXBuildFile; fileRef = 616B54FC2C0F1A8400350030 /* Luminence */; };
+		616B55532C0F1A8500350030 /* FilmGrain in Resources */ = {isa = PBXBuildFile; fileRef = 616B54FD2C0F1A8400350030 /* FilmGrain */; };
+		616B55542C0F1A8500350030 /* Vibrance in Resources */ = {isa = PBXBuildFile; fileRef = 616B54FE2C0F1A8400350030 /* Vibrance */; };
+		616B55552C0F1A8500350030 /* CRT in Resources */ = {isa = PBXBuildFile; fileRef = 616B54FF2C0F1A8400350030 /* CRT */; };
+		616B55562C0F1A8500350030 /* Vignette in Resources */ = {isa = PBXBuildFile; fileRef = 616B55002C0F1A8400350030 /* Vignette */; };
+		616B55572C0F1A8500350030 /* WorleyDisplacement in Resources */ = {isa = PBXBuildFile; fileRef = 616B55022C0F1A8400350030 /* WorleyDisplacement */; };
+		616B55582C0F1A8500350030 /* SineDistortion in Resources */ = {isa = PBXBuildFile; fileRef = 616B55032C0F1A8400350030 /* SineDistortion */; };
+		616B55592C0F1A8500350030 /* Water in Resources */ = {isa = PBXBuildFile; fileRef = 616B55042C0F1A8400350030 /* Water */; };
+		616B555A2C0F1A8500350030 /* RelativeWave in Resources */ = {isa = PBXBuildFile; fileRef = 616B55052C0F1A8400350030 /* RelativeWave */; };
+		616B555B2C0F1A8500350030 /* Pinch in Resources */ = {isa = PBXBuildFile; fileRef = 616B55062C0F1A8400350030 /* Pinch */; };
+		616B555C2C0F1A8500350030 /* BarrelDistortion in Resources */ = {isa = PBXBuildFile; fileRef = 616B55072C0F1A8400350030 /* BarrelDistortion */; };
+		616B555D2C0F1A8500350030 /* Wave in Resources */ = {isa = PBXBuildFile; fileRef = 616B55082C0F1A8400350030 /* Wave */; };
+		616B555E2C0F1A8500350030 /* Dreamy in Resources */ = {isa = PBXBuildFile; fileRef = 616B550A2C0F1A8400350030 /* Dreamy */; };
+		616B555F2C0F1A8500350030 /* Crosswarp in Resources */ = {isa = PBXBuildFile; fileRef = 616B550B2C0F1A8400350030 /* Crosswarp */; };
+		616B55602C0F1A8500350030 /* Morph in Resources */ = {isa = PBXBuildFile; fileRef = 616B550C2C0F1A8400350030 /* Morph */; };
+		616B55612C0F1A8500350030 /* Wind in Resources */ = {isa = PBXBuildFile; fileRef = 616B550D2C0F1A8400350030 /* Wind */; };
+		616B55622C0F1A8500350030 /* Swirl in Resources */ = {isa = PBXBuildFile; fileRef = 616B550E2C0F1A8400350030 /* Swirl */; };
+		616B55632C0F1A8500350030 /* Genie in Resources */ = {isa = PBXBuildFile; fileRef = 616B550F2C0F1A8400350030 /* Genie */; };
+		616B55642C0F1A8500350030 /* Radial in Resources */ = {isa = PBXBuildFile; fileRef = 616B55102C0F1A8400350030 /* Radial */; };
+		616B55652C0F1A8500350030 /* Circle in Resources */ = {isa = PBXBuildFile; fileRef = 616B55112C0F1A8400350030 /* Circle */; };
+		616B55662C0F1A8500350030 /* WindowBlinds in Resources */ = {isa = PBXBuildFile; fileRef = 616B55122C0F1A8400350030 /* WindowBlinds */; };
+		616B55672C0F1A8500350030 /* GalaxyVisuals in Resources */ = {isa = PBXBuildFile; fileRef = 616B55142C0F1A8500350030 /* GalaxyVisuals */; };
+		616B55682C0F1A8500350030 /* GlowingSoundParticles in Resources */ = {isa = PBXBuildFile; fileRef = 616B55152C0F1A8500350030 /* GlowingSoundParticles */; };
+		616B55692C0F1A8500350030 /* WavesRemix in Resources */ = {isa = PBXBuildFile; fileRef = 616B55162C0F1A8500350030 /* WavesRemix */; };
+		616B556A2C0F1A8500350030 /* UniverseWithin in Resources */ = {isa = PBXBuildFile; fileRef = 616B55172C0F1A8500350030 /* UniverseWithin */; };
+		616B556B2C0F1A8500350030 /* SineSoundWaves in Resources */ = {isa = PBXBuildFile; fileRef = 616B55182C0F1A8500350030 /* SineSoundWaves */; };
+		616B556C2C0F1A8500350030 /* AudioEclipse in Resources */ = {isa = PBXBuildFile; fileRef = 616B55192C0F1A8500350030 /* AudioEclipse */; };
+		616B556D2C0F1A8500350030 /* RoundAudioSpecturm in Resources */ = {isa = PBXBuildFile; fileRef = 616B551A2C0F1A8500350030 /* RoundAudioSpecturm */; };
+		616B556E2C0F1A8500350030 /* ShadesOfMusic in Resources */ = {isa = PBXBuildFile; fileRef = 616B551B2C0F1A8500350030 /* ShadesOfMusic */; };
 		617C3E432BD4454800DDC65D /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C3E422BD4454800DDC65D /* Transitions.swift */; };
 		618D0FFE2BF29F2200E3E8E8 /* CBass in Frameworks */ = {isa = PBXBuildFile; productRef = 618D0FFD2BF29F2200E3E8E8 /* CBass */; };
 		61920EC82BC2E4CE00989BB9 /* ShaderGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */; };
@@ -73,6 +156,89 @@
 		614B616F2BBF167D003A4935 /* DistortionEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionEffectViews.swift; sourceTree = "<group>"; };
 		614B61712BBF22EC003A4935 /* LayerEffectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerEffectViews.swift; sourceTree = "<group>"; };
 		6153C7382BEBDC120062CB26 /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
+		616B54C32C0F1A8400350030 /* ElectricField */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElectricField; sourceTree = "<group>"; };
+		616B54C42C0F1A8400350030 /* Clouds */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Clouds; sourceTree = "<group>"; };
+		616B54C52C0F1A8400350030 /* SineWaves */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SineWaves; sourceTree = "<group>"; };
+		616B54C62C0F1A8400350030 /* GlowingMarblingBlack */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GlowingMarblingBlack; sourceTree = "<group>"; };
+		616B54C72C0F1A8400350030 /* Portal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Portal; sourceTree = "<group>"; };
+		616B54C82C0F1A8400350030 /* TMGyroids */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TMGyroids; sourceTree = "<group>"; };
+		616B54C92C0F1A8400350030 /* Turbulence */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Turbulence; sourceTree = "<group>"; };
+		616B54CA2C0F1A8400350030 /* Iris */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Iris; sourceTree = "<group>"; };
+		616B54CB2C0F1A8400350030 /* StarField */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StarField; sourceTree = "<group>"; };
+		616B54CC2C0F1A8400350030 /* ModFan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ModFan; sourceTree = "<group>"; };
+		616B54CD2C0F1A8400350030 /* Fireworks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fireworks; sourceTree = "<group>"; };
+		616B54CE2C0F1A8400350030 /* CrystalCaustic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CrystalCaustic; sourceTree = "<group>"; };
+		616B54CF2C0F1A8400350030 /* WetNeuralNetwork */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WetNeuralNetwork; sourceTree = "<group>"; };
+		616B54D02C0F1A8400350030 /* StarNest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StarNest; sourceTree = "<group>"; };
+		616B54D12C0F1A8400350030 /* HypnoticRipples */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HypnoticRipples; sourceTree = "<group>"; };
+		616B54D22C0F1A8400350030 /* Writhe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Writhe; sourceTree = "<group>"; };
+		616B54D32C0F1A8400350030 /* BeamDroplet */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BeamDroplet; sourceTree = "<group>"; };
+		616B54D42C0F1A8400350030 /* SpiralRiders */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpiralRiders; sourceTree = "<group>"; };
+		616B54D52C0F1A8400350030 /* ExplosionCloud */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ExplosionCloud; sourceTree = "<group>"; };
+		616B54D62C0F1A8400350030 /* NeonRug */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NeonRug; sourceTree = "<group>"; };
+		616B54D72C0F1A8400350030 /* RetroSun */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RetroSun; sourceTree = "<group>"; };
+		616B54D82C0F1A8400350030 /* Singularity */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Singularity; sourceTree = "<group>"; };
+		616B54D92C0F1A8400350030 /* BlueVoid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlueVoid; sourceTree = "<group>"; };
+		616B54DA2C0F1A8400350030 /* CosmicBlood */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CosmicBlood; sourceTree = "<group>"; };
+		616B54DB2C0F1A8400350030 /* Lightning01 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lightning01; sourceTree = "<group>"; };
+		616B54DC2C0F1A8400350030 /* LavaBlobs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LavaBlobs; sourceTree = "<group>"; };
+		616B54DD2C0F1A8400350030 /* FBMLightning */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FBMLightning; sourceTree = "<group>"; };
+		616B54DE2C0F1A8400350030 /* PulsatingFlesh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PulsatingFlesh; sourceTree = "<group>"; };
+		616B54DF2C0F1A8400350030 /* BaseWarpFBM */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BaseWarpFBM; sourceTree = "<group>"; };
+		616B54E02C0F1A8400350030 /* BlackHoleDawn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlackHoleDawn; sourceTree = "<group>"; };
+		616B54E12C0F1A8400350030 /* LensFlare */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LensFlare; sourceTree = "<group>"; };
+		616B54E32C0F1A8400350030 /* FluidGradient */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FluidGradient; sourceTree = "<group>"; };
+		616B54E42C0F1A8400350030 /* RainbowSherbet */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RainbowSherbet; sourceTree = "<group>"; };
+		616B54E52C0F1A8400350030 /* CrumpledWave */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CrumpledWave; sourceTree = "<group>"; };
+		616B54E62C0F1A8400350030 /* ColorWind */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorWind; sourceTree = "<group>"; };
+		616B54E72C0F1A8400350030 /* GradientFlow */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GradientFlow; sourceTree = "<group>"; };
+		616B54E82C0F1A8400350030 /* Gradientify */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gradientify; sourceTree = "<group>"; };
+		616B54E92C0F1A8400350030 /* GlossyGradients */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GlossyGradients; sourceTree = "<group>"; };
+		616B54EA2C0F1A8400350030 /* RotatingGradient */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RotatingGradient; sourceTree = "<group>"; };
+		616B54EB2C0F1A8400350030 /* ChromaGradients */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChromaGradients; sourceTree = "<group>"; };
+		616B54ED2C0F1A8400350030 /* VHS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VHS; sourceTree = "<group>"; };
+		616B54EE2C0F1A8400350030 /* Emboss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Emboss; sourceTree = "<group>"; };
+		616B54EF2C0F1A8400350030 /* Bubble */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bubble; sourceTree = "<group>"; };
+		616B54F02C0F1A8400350030 /* SineWave */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SineWave; sourceTree = "<group>"; };
+		616B54F12C0F1A8400350030 /* ColorPlanes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorPlanes; sourceTree = "<group>"; };
+		616B54F22C0F1A8400350030 /* WarpingLoupe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WarpingLoupe; sourceTree = "<group>"; };
+		616B54F32C0F1A8400350030 /* SoftThreshold */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SoftThreshold; sourceTree = "<group>"; };
+		616B54F42C0F1A8400350030 /* Sobel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sobel; sourceTree = "<group>"; };
+		616B54F62C0F1A8400350030 /* Gamma */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gamma; sourceTree = "<group>"; };
+		616B54F72C0F1A8400350030 /* NightVision */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NightVision; sourceTree = "<group>"; };
+		616B54F82C0F1A8400350030 /* Exposure */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Exposure; sourceTree = "<group>"; };
+		616B54F92C0F1A8400350030 /* LightbulbScreen  */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LightbulbScreen "; sourceTree = "<group>"; };
+		616B54FA2C0F1A8400350030 /* Infrared */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Infrared; sourceTree = "<group>"; };
+		616B54FB2C0F1A8400350030 /* TileableWaterCaustic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TileableWaterCaustic; sourceTree = "<group>"; };
+		616B54FC2C0F1A8400350030 /* Luminence */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Luminence; sourceTree = "<group>"; };
+		616B54FD2C0F1A8400350030 /* FilmGrain */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FilmGrain; sourceTree = "<group>"; };
+		616B54FE2C0F1A8400350030 /* Vibrance */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vibrance; sourceTree = "<group>"; };
+		616B54FF2C0F1A8400350030 /* CRT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CRT; sourceTree = "<group>"; };
+		616B55002C0F1A8400350030 /* Vignette */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vignette; sourceTree = "<group>"; };
+		616B55022C0F1A8400350030 /* WorleyDisplacement */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorleyDisplacement; sourceTree = "<group>"; };
+		616B55032C0F1A8400350030 /* SineDistortion */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SineDistortion; sourceTree = "<group>"; };
+		616B55042C0F1A8400350030 /* Water */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Water; sourceTree = "<group>"; };
+		616B55052C0F1A8400350030 /* RelativeWave */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RelativeWave; sourceTree = "<group>"; };
+		616B55062C0F1A8400350030 /* Pinch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pinch; sourceTree = "<group>"; };
+		616B55072C0F1A8400350030 /* BarrelDistortion */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarrelDistortion; sourceTree = "<group>"; };
+		616B55082C0F1A8400350030 /* Wave */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Wave; sourceTree = "<group>"; };
+		616B550A2C0F1A8400350030 /* Dreamy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dreamy; sourceTree = "<group>"; };
+		616B550B2C0F1A8400350030 /* Crosswarp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Crosswarp; sourceTree = "<group>"; };
+		616B550C2C0F1A8400350030 /* Morph */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Morph; sourceTree = "<group>"; };
+		616B550D2C0F1A8400350030 /* Wind */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Wind; sourceTree = "<group>"; };
+		616B550E2C0F1A8400350030 /* Swirl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Swirl; sourceTree = "<group>"; };
+		616B550F2C0F1A8400350030 /* Genie */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Genie; sourceTree = "<group>"; };
+		616B55102C0F1A8400350030 /* Radial */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Radial; sourceTree = "<group>"; };
+		616B55112C0F1A8400350030 /* Circle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Circle; sourceTree = "<group>"; };
+		616B55122C0F1A8400350030 /* WindowBlinds */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WindowBlinds; sourceTree = "<group>"; };
+		616B55142C0F1A8500350030 /* GalaxyVisuals */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GalaxyVisuals; sourceTree = "<group>"; };
+		616B55152C0F1A8500350030 /* GlowingSoundParticles */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GlowingSoundParticles; sourceTree = "<group>"; };
+		616B55162C0F1A8500350030 /* WavesRemix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WavesRemix; sourceTree = "<group>"; };
+		616B55172C0F1A8500350030 /* UniverseWithin */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UniverseWithin; sourceTree = "<group>"; };
+		616B55182C0F1A8500350030 /* SineSoundWaves */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SineSoundWaves; sourceTree = "<group>"; };
+		616B55192C0F1A8500350030 /* AudioEclipse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AudioEclipse; sourceTree = "<group>"; };
+		616B551A2C0F1A8500350030 /* RoundAudioSpecturm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RoundAudioSpecturm; sourceTree = "<group>"; };
+		616B551B2C0F1A8500350030 /* ShadesOfMusic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShadesOfMusic; sourceTree = "<group>"; };
 		617C3E422BD4454800DDC65D /* Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
 		61920EC72BC2E4CE00989BB9 /* ShaderGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderGrid.swift; sourceTree = "<group>"; };
 		61A488D12BC2A5AA003BE4F2 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
@@ -158,6 +324,7 @@
 		611AAA032BBC32A700A1531B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				616B54C12C0F1A6D00350030 /* iShaderMetalResources */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -213,6 +380,152 @@
 				6149E9592BC837C7009ECD83 /* PeaksSorter.swift */,
 			);
 			path = BASSAudioEngine;
+			sourceTree = "<group>";
+		};
+		616B54C12C0F1A6D00350030 /* iShaderMetalResources */ = {
+			isa = PBXGroup;
+			children = (
+				616B55132C0F1A8500350030 /* RAW - AudioVisualizer */,
+				616B54F52C0F1A8400350030 /* RAW - ColorEffect */,
+				616B55012C0F1A8400350030 /* RAW - DistortionEffect */,
+				616B54E22C0F1A8400350030 /* RAW - Gradients */,
+				616B54EC2C0F1A8400350030 /* RAW - LayerEffect */,
+				616B54C22C0F1A8400350030 /* RAW - ShaderArt */,
+				616B55092C0F1A8400350030 /* RAW - Transition */,
+			);
+			path = iShaderMetalResources;
+			sourceTree = "<group>";
+		};
+		616B54C22C0F1A8400350030 /* RAW - ShaderArt */ = {
+			isa = PBXGroup;
+			children = (
+				616B54C32C0F1A8400350030 /* ElectricField */,
+				616B54C42C0F1A8400350030 /* Clouds */,
+				616B54C52C0F1A8400350030 /* SineWaves */,
+				616B54C62C0F1A8400350030 /* GlowingMarblingBlack */,
+				616B54C72C0F1A8400350030 /* Portal */,
+				616B54C82C0F1A8400350030 /* TMGyroids */,
+				616B54C92C0F1A8400350030 /* Turbulence */,
+				616B54CA2C0F1A8400350030 /* Iris */,
+				616B54CB2C0F1A8400350030 /* StarField */,
+				616B54CC2C0F1A8400350030 /* ModFan */,
+				616B54CD2C0F1A8400350030 /* Fireworks */,
+				616B54CE2C0F1A8400350030 /* CrystalCaustic */,
+				616B54CF2C0F1A8400350030 /* WetNeuralNetwork */,
+				616B54D02C0F1A8400350030 /* StarNest */,
+				616B54D12C0F1A8400350030 /* HypnoticRipples */,
+				616B54D22C0F1A8400350030 /* Writhe */,
+				616B54D32C0F1A8400350030 /* BeamDroplet */,
+				616B54D42C0F1A8400350030 /* SpiralRiders */,
+				616B54D52C0F1A8400350030 /* ExplosionCloud */,
+				616B54D62C0F1A8400350030 /* NeonRug */,
+				616B54D72C0F1A8400350030 /* RetroSun */,
+				616B54D82C0F1A8400350030 /* Singularity */,
+				616B54D92C0F1A8400350030 /* BlueVoid */,
+				616B54DA2C0F1A8400350030 /* CosmicBlood */,
+				616B54DB2C0F1A8400350030 /* Lightning01 */,
+				616B54DC2C0F1A8400350030 /* LavaBlobs */,
+				616B54DD2C0F1A8400350030 /* FBMLightning */,
+				616B54DE2C0F1A8400350030 /* PulsatingFlesh */,
+				616B54DF2C0F1A8400350030 /* BaseWarpFBM */,
+				616B54E02C0F1A8400350030 /* BlackHoleDawn */,
+				616B54E12C0F1A8400350030 /* LensFlare */,
+			);
+			path = "RAW - ShaderArt";
+			sourceTree = "<group>";
+		};
+		616B54E22C0F1A8400350030 /* RAW - Gradients */ = {
+			isa = PBXGroup;
+			children = (
+				616B54E32C0F1A8400350030 /* FluidGradient */,
+				616B54E42C0F1A8400350030 /* RainbowSherbet */,
+				616B54E52C0F1A8400350030 /* CrumpledWave */,
+				616B54E62C0F1A8400350030 /* ColorWind */,
+				616B54E72C0F1A8400350030 /* GradientFlow */,
+				616B54E82C0F1A8400350030 /* Gradientify */,
+				616B54E92C0F1A8400350030 /* GlossyGradients */,
+				616B54EA2C0F1A8400350030 /* RotatingGradient */,
+				616B54EB2C0F1A8400350030 /* ChromaGradients */,
+			);
+			path = "RAW - Gradients";
+			sourceTree = "<group>";
+		};
+		616B54EC2C0F1A8400350030 /* RAW - LayerEffect */ = {
+			isa = PBXGroup;
+			children = (
+				616B54ED2C0F1A8400350030 /* VHS */,
+				616B54EE2C0F1A8400350030 /* Emboss */,
+				616B54EF2C0F1A8400350030 /* Bubble */,
+				616B54F02C0F1A8400350030 /* SineWave */,
+				616B54F12C0F1A8400350030 /* ColorPlanes */,
+				616B54F22C0F1A8400350030 /* WarpingLoupe */,
+				616B54F32C0F1A8400350030 /* SoftThreshold */,
+				616B54F42C0F1A8400350030 /* Sobel */,
+			);
+			path = "RAW - LayerEffect";
+			sourceTree = "<group>";
+		};
+		616B54F52C0F1A8400350030 /* RAW - ColorEffect */ = {
+			isa = PBXGroup;
+			children = (
+				616B54F62C0F1A8400350030 /* Gamma */,
+				616B54F72C0F1A8400350030 /* NightVision */,
+				616B54F82C0F1A8400350030 /* Exposure */,
+				616B54F92C0F1A8400350030 /* LightbulbScreen  */,
+				616B54FA2C0F1A8400350030 /* Infrared */,
+				616B54FB2C0F1A8400350030 /* TileableWaterCaustic */,
+				616B54FC2C0F1A8400350030 /* Luminence */,
+				616B54FD2C0F1A8400350030 /* FilmGrain */,
+				616B54FE2C0F1A8400350030 /* Vibrance */,
+				616B54FF2C0F1A8400350030 /* CRT */,
+				616B55002C0F1A8400350030 /* Vignette */,
+			);
+			path = "RAW - ColorEffect";
+			sourceTree = "<group>";
+		};
+		616B55012C0F1A8400350030 /* RAW - DistortionEffect */ = {
+			isa = PBXGroup;
+			children = (
+				616B55022C0F1A8400350030 /* WorleyDisplacement */,
+				616B55032C0F1A8400350030 /* SineDistortion */,
+				616B55042C0F1A8400350030 /* Water */,
+				616B55052C0F1A8400350030 /* RelativeWave */,
+				616B55062C0F1A8400350030 /* Pinch */,
+				616B55072C0F1A8400350030 /* BarrelDistortion */,
+				616B55082C0F1A8400350030 /* Wave */,
+			);
+			path = "RAW - DistortionEffect";
+			sourceTree = "<group>";
+		};
+		616B55092C0F1A8400350030 /* RAW - Transition */ = {
+			isa = PBXGroup;
+			children = (
+				616B550A2C0F1A8400350030 /* Dreamy */,
+				616B550B2C0F1A8400350030 /* Crosswarp */,
+				616B550C2C0F1A8400350030 /* Morph */,
+				616B550D2C0F1A8400350030 /* Wind */,
+				616B550E2C0F1A8400350030 /* Swirl */,
+				616B550F2C0F1A8400350030 /* Genie */,
+				616B55102C0F1A8400350030 /* Radial */,
+				616B55112C0F1A8400350030 /* Circle */,
+				616B55122C0F1A8400350030 /* WindowBlinds */,
+			);
+			path = "RAW - Transition";
+			sourceTree = "<group>";
+		};
+		616B55132C0F1A8500350030 /* RAW - AudioVisualizer */ = {
+			isa = PBXGroup;
+			children = (
+				616B55142C0F1A8500350030 /* GalaxyVisuals */,
+				616B55152C0F1A8500350030 /* GlowingSoundParticles */,
+				616B55162C0F1A8500350030 /* WavesRemix */,
+				616B55172C0F1A8500350030 /* UniverseWithin */,
+				616B55182C0F1A8500350030 /* SineSoundWaves */,
+				616B55192C0F1A8500350030 /* AudioEclipse */,
+				616B551A2C0F1A8500350030 /* RoundAudioSpecturm */,
+				616B551B2C0F1A8500350030 /* ShadesOfMusic */,
+			);
+			path = "RAW - AudioVisualizer";
 			sourceTree = "<group>";
 		};
 		61A488D02BC2A58D003BE4F2 /* Gradients */ = {
@@ -370,10 +683,93 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				616B55592C0F1A8500350030 /* Water in Resources */,
+				616B556D2C0F1A8500350030 /* RoundAudioSpecturm in Resources */,
+				616B55442C0F1A8500350030 /* VHS in Resources */,
+				616B55242C0F1A8500350030 /* StarField in Resources */,
+				616B55332C0F1A8500350030 /* CosmicBlood in Resources */,
+				616B55282C0F1A8500350030 /* WetNeuralNetwork in Resources */,
+				616B553D2C0F1A8500350030 /* CrumpledWave in Resources */,
+				616B553E2C0F1A8500350030 /* ColorWind in Resources */,
+				616B55522C0F1A8500350030 /* Luminence in Resources */,
+				616B55302C0F1A8500350030 /* RetroSun in Resources */,
+				616B55492C0F1A8500350030 /* WarpingLoupe in Resources */,
+				616B55422C0F1A8500350030 /* RotatingGradient in Resources */,
+				616B55342C0F1A8500350030 /* Lightning01 in Resources */,
+				616B553A2C0F1A8500350030 /* LensFlare in Resources */,
+				616B55642C0F1A8500350030 /* Radial in Resources */,
+				616B55322C0F1A8500350030 /* BlueVoid in Resources */,
+				616B552D2C0F1A8500350030 /* SpiralRiders in Resources */,
+				616B55542C0F1A8500350030 /* Vibrance in Resources */,
+				616B554D2C0F1A8500350030 /* NightVision in Resources */,
+				616B552C2C0F1A8500350030 /* BeamDroplet in Resources */,
+				616B55482C0F1A8500350030 /* ColorPlanes in Resources */,
+				616B55462C0F1A8500350030 /* Bubble in Resources */,
+				616B55252C0F1A8500350030 /* ModFan in Resources */,
 				611058252C0750B000A24DF5 /* Empty in Resources */,
+				616B55612C0F1A8500350030 /* Wind in Resources */,
+				616B552E2C0F1A8500350030 /* ExplosionCloud in Resources */,
+				616B555E2C0F1A8500350030 /* Dreamy in Resources */,
+				616B55652C0F1A8500350030 /* Circle in Resources */,
+				616B55632C0F1A8500350030 /* Genie in Resources */,
+				616B55202C0F1A8500350030 /* Portal in Resources */,
+				616B55562C0F1A8500350030 /* Vignette in Resources */,
+				616B55452C0F1A8500350030 /* Emboss in Resources */,
+				616B55582C0F1A8500350030 /* SineDistortion in Resources */,
+				616B55402C0F1A8500350030 /* Gradientify in Resources */,
+				616B554B2C0F1A8500350030 /* Sobel in Resources */,
+				616B55382C0F1A8500350030 /* BaseWarpFBM in Resources */,
+				616B552B2C0F1A8500350030 /* Writhe in Resources */,
+				616B55622C0F1A8500350030 /* Swirl in Resources */,
+				616B555B2C0F1A8500350030 /* Pinch in Resources */,
+				616B55392C0F1A8500350030 /* BlackHoleDawn in Resources */,
+				616B551C2C0F1A8500350030 /* ElectricField in Resources */,
+				616B55232C0F1A8500350030 /* Iris in Resources */,
+				616B556E2C0F1A8500350030 /* ShadesOfMusic in Resources */,
+				616B55602C0F1A8500350030 /* Morph in Resources */,
+				616B555C2C0F1A8500350030 /* BarrelDistortion in Resources */,
+				616B554F2C0F1A8500350030 /* LightbulbScreen  in Resources */,
+				616B55212C0F1A8500350030 /* TMGyroids in Resources */,
+				616B55262C0F1A8500350030 /* Fireworks in Resources */,
+				616B55362C0F1A8500350030 /* FBMLightning in Resources */,
+				616B55532C0F1A8500350030 /* FilmGrain in Resources */,
+				616B55552C0F1A8500350030 /* CRT in Resources */,
+				616B55312C0F1A8500350030 /* Singularity in Resources */,
+				616B551D2C0F1A8500350030 /* Clouds in Resources */,
+				616B556A2C0F1A8500350030 /* UniverseWithin in Resources */,
 				611AAA0C2BBC5F9000A1531B /* Be Khod Ay.mp3 in Resources */,
+				616B555A2C0F1A8500350030 /* RelativeWave in Resources */,
+				616B553F2C0F1A8500350030 /* GradientFlow in Resources */,
+				616B555D2C0F1A8500350030 /* Wave in Resources */,
+				616B55502C0F1A8500350030 /* Infrared in Resources */,
+				616B553C2C0F1A8500350030 /* RainbowSherbet in Resources */,
+				616B55432C0F1A8500350030 /* ChromaGradients in Resources */,
+				616B55672C0F1A8500350030 /* GalaxyVisuals in Resources */,
+				616B55572C0F1A8500350030 /* WorleyDisplacement in Resources */,
+				616B554C2C0F1A8500350030 /* Gamma in Resources */,
+				616B55512C0F1A8500350030 /* TileableWaterCaustic in Resources */,
+				616B556C2C0F1A8500350030 /* AudioEclipse in Resources */,
+				616B551F2C0F1A8500350030 /* GlowingMarblingBlack in Resources */,
 				611AA9F02BBC2ED400A1531B /* Preview Assets.xcassets in Resources */,
+				616B55372C0F1A8500350030 /* PulsatingFlesh in Resources */,
+				616B55272C0F1A8500350030 /* CrystalCaustic in Resources */,
+				616B55292C0F1A8500350030 /* StarNest in Resources */,
+				616B556B2C0F1A8500350030 /* SineSoundWaves in Resources */,
+				616B551E2C0F1A8500350030 /* SineWaves in Resources */,
+				616B555F2C0F1A8500350030 /* Crosswarp in Resources */,
+				616B55412C0F1A8500350030 /* GlossyGradients in Resources */,
+				616B552A2C0F1A8500350030 /* HypnoticRipples in Resources */,
+				616B55472C0F1A8500350030 /* SineWave in Resources */,
+				616B553B2C0F1A8500350030 /* FluidGradient in Resources */,
+				616B552F2C0F1A8500350030 /* NeonRug in Resources */,
+				616B55352C0F1A8500350030 /* LavaBlobs in Resources */,
+				616B55692C0F1A8500350030 /* WavesRemix in Resources */,
 				611AA9EC2BBC2ED400A1531B /* Assets.xcassets in Resources */,
+				616B554A2C0F1A8500350030 /* SoftThreshold in Resources */,
+				616B554E2C0F1A8500350030 /* Exposure in Resources */,
+				616B55682C0F1A8500350030 /* GlowingSoundParticles in Resources */,
+				616B55662C0F1A8500350030 /* WindowBlinds in Resources */,
+				616B55222C0F1A8500350030 /* Turbulence in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
